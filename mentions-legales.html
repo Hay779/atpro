@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales - Atelier Express Pro</title>
+    <meta name="description" content="Consultez les mentions légales du site Atelier Express Pro : informations sur l'éditeur, l'hébergeur, la propriété intellectuelle et la responsabilité.">
+    <meta name="robots" content="noindex, follow"> <!-- Généralement, on ne veut pas indexer les mentions légales -->
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="icon" href="img/LogoAtelierExpressPro.png" type="image/png">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .legal-content-section { padding: 40px 0; }
+        .legal-content-section h2 { font-size: 1.6rem; margin-bottom: 15px; color: var(--custom-text-dark-primary); }
+        .legal-content-section h3 { font-size: 1.3rem; margin-top: 25px; margin-bottom: 10px; color: var(--custom-text-dark-primary); }
+        .legal-content-section p, .legal-content-section ul li { color: var(--custom-text-medium-gray); font-size: 0.95rem; line-height: 1.7; margin-bottom: 10px;}
+        .legal-content-section ul { list-style: disc; padding-left: 20px; }
+        .legal-content-section a { color: var(--custom-accent-magenta); text-decoration: underline;}
+        .legal-content-section a:hover { color: var(--custom-accent-magenta-hover); }
+    </style>
+</head>
+<body>
+    <header class="site-header-custom">
+        <div class="container header-custom-container">
+            <div class="logo-atelier-express-pro-custom">
+                <a href="index.html" title="Accueil Atelier Express Pro - Solutions IT pour PME">
+                    <picture>
+                        <source media="(max-width:850px)" srcset="img/logoP.png">
+                        <img src="img/LogoAtelierExpressPro.png" alt="Logo Atelier Express Pro - Solutions IT pour PME"
+                             onerror="this.style.display='none'; this.onerror=null; document.getElementById('logoTextFallbackHeader').style.display='block';"
+                             loading="eager">
+                    </picture>
+                    <span id="logoTextFallbackHeader" class="logo-text-fallback" style="display:none;">ATELIER EXPRESS PRO</span>
+                </a>
+            </div>
+            <nav class="main-nav-custom" aria-label="Navigation principale de bureau">
+                <!-- Liens de navigation principale desktop (si ajoutés) -->
+            </nav>
+            <div class="header-actions-combined">
+                <a href="tel:+33412345678" class="phone-link-header">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                    <span class="phone-text-header">04 12 34 56 78</span>
+                </a>
+                <a href="questionnaire.html" class="btn btn-primary-custom cta-header-main">Commencer votre devis</a>
+                <button class="mobile-menu-toggle-custom" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNavMenuUniversal">
+                    <i class="fas fa-bars icon-open" aria-hidden="true"></i>
+                    <i class="fas fa-times icon-close" aria-hidden="true" style="display: none;"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile-nav-custom" id="mobileNavMenuUniversal" aria-label="Menu de navigation mobile">
+            <a href="index.html#prestations-atelier-express-pro" class="mobile-nav-main-link">Nos Services</a>
+            <hr>
+            <a href="services/infogerance.html">Infogérance</a>
+            <a href="services/cybersecurite.html">Cybersécurité</a>
+            <a href="services/cloud.html">Solutions Cloud</a>
+            <a href="services/reseau.html">Réseau</a>
+            <a href="services/materiel.html">Matériel</a>
+            <a href="services/audit.html">Audit & Conseil</a>
+            <hr>
+            <a href="index.html#pourquoi-atelier-express-pro">Pourquoi Nous ?</a>
+            <a href="actualites.html">Actualités</a>
+            <a href="a-propos.html">À Propos</a>
+            <a href="partenariat.html">Partenariat</a>
+            <a href="contact.html">Contact</a>
+            <hr>
+            <a href="questionnaire.html" class="btn btn-accent-custom mobile-nav-btn">Simulateur Devis Complet</a>
+            <a href="support-urgent.html" class="btn btn-secondary-custom mobile-nav-btn">Support Urgent</a>
+        </nav>
+    </header>
+    <nav class="services-navigation-bar" aria-label="Navigation des services principaux">
+        <div class="container services-nav-container">
+            <ul>
+                <li><a href="services/infogerance.html"><i class="fas fa-cogs" aria-hidden="true"></i> <span class="service-nav-text">Infogérance</span></a></li>
+                <li><a href="services/cybersecurite.html"><i class="fas fa-shield-virus" aria-hidden="true"></i> <span class="service-nav-text">Cybersécurité</span></a></li>
+                <li><a href="services/cloud.html"><i class="fas fa-cloud" aria-hidden="true"></i> <span class="service-nav-text">Solutions Cloud</span></a></li>
+                <li><a href="services/reseau.html"><i class="fas fa-network-wired" aria-hidden="true"></i> <span class="service-nav-text">Réseau</span></a></li>
+                <li><a href="services/materiel.html"><i class="fas fa-laptop-code" aria-hidden="true"></i> <span class="service-nav-text">Matériel</span></a></li>
+                <li><a href="services/audit.html"><i class="fas fa-clipboard-check" aria-hidden="true"></i> <span class="service-nav-text">Audit & Conseil</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero-service" style="background-color: var(--custom-bg-light-gray); padding-top: 40px; padding-bottom: 40px;">
+            <div class="container">
+                <div class="breadcrumb-service" style="color: var(--custom-text-secondary);">
+                    <a href="index.html" style="color: var(--site-primary-blue);">Accueil</a> > <span class="current-service" style="color: var(--site-text-dark);">Mentions Légales</span>
+                </div>
+                <h1 style="color: var(--site-text-dark); text-align: center;">Mentions Légales</h1>
+            </div>
+        </section>
+
+        <section class="legal-content-section">
+            <div class="container">
+                <p>Conformément aux dispositions des Articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l’économie numérique, dite L.C.E.N., il est porté à la connaissance des utilisateurs et visiteurs du site Atelier Express Pro les présentes mentions légales.</p>
+                <p>Le site Atelier Express Pro est accessible à l’adresse suivante : www.atelierexpresspro.fr (ci-après "le Site"). L’accès et l’utilisation du Site sont soumis aux présentes "Mentions légales" détaillées ci-après ainsi qu’aux lois et/ou règlements applicables.</p>
+
+                <h2>ARTICLE 1 - INFORMATIONS LÉGALES</h2>
+                <p>En vertu de l’Article 6 de la Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, il est précisé dans cet article l’identité des différents intervenants dans le cadre de sa réalisation et de son suivi.</p>
+                
+                <h3>Éditeur du site</h3>
+                <p>
+                    Raison sociale : Atelier Express Pro SAS (À COMPLÉTER)<br>
+                    Adresse du siège social : 123 Avenue de la Tech, 75000 Paris, France (À COMPLÉTER)<br>
+                    Numéro de téléphone : 04 12 34 56 78 (À COMPLÉTER)<br>
+                    Adresse e-mail : contact@atelierexpresspro.fr (À COMPLÉTER)<br>
+                    Capital social : [Montant] € (À COMPLÉTER)<br>
+                    Numéro RCS : [Numéro RCS] Paris (À COMPLÉTER)<br>
+                    Numéro de TVA intracommunautaire : [Numéro TVA] (À COMPLÉTER)
+                </p>
+
+                <h3>Directeur de la publication</h3>
+                <p>
+                    Le directeur de la publication est : [Nom du Directeur de Publication] (À COMPLÉTER)<br>
+                    Adresse e-mail de contact : [Email du Directeur] (À COMPLÉTER)
+                </p>
+
+                <h3>Hébergeur du site</h3>
+                <p>
+                    Le site Atelier Express Pro est hébergé par : [Nom de l'Hébergeur] (À COMPLÉTER)<br>
+                    dont le siège social est situé à l’adresse suivante : [Adresse de l'Hébergeur] (À COMPLÉTER)<br>
+                    Numéro de téléphone : [Téléphone Hébergeur] (À COMPLÉTER)<br>
+                    Adresse e-mail : [Email Hébergeur] (À COMPLÉTER)
+                </p>
+
+                <h3>Utilisateurs</h3>
+                <p>Sont considérés comme utilisateurs tous les internautes qui naviguent, lisent, visionnent et utilisent le site Atelier Express Pro (ci-après les "Utilisateurs").</p>
+
+                <h2>ARTICLE 2 - ACCESSIBILITÉ</h2>
+                <p>Le Site est par principe accessible aux Utilisateurs 24/24h et 7/7j, sauf interruption, programmée ou non, pour des besoins de maintenance ou en cas de force majeure.</p>
+                <p>En cas d’impossibilité d’accès au Site, celui-ci s’engage à faire son maximum afin d’en rétablir l’accès. Le Site ne saurait être tenu pour responsable de tout dommage, quelle qu’en soit la nature, résultant de son indisponibilité.</p>
+
+                <h2>ARTICLE 3 - PROPRIÉTÉ INTELLECTUELLE</h2>
+                <p>L'ensemble de ce Site (contenus, textes, images, vidéos, logos, marques...) relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques.</p>
+                <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de l’Éditeur.</p>
+                <p>Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.</p>
+
+                <h2>ARTICLE 4 - RESPONSABILITÉ</h2>
+                <p>L'Éditeur s'efforce de fournir sur le site www.atelierexpresspro.fr des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.</p>
+                <p>Le Site peut contenir des liens hypertextes vers d’autres sites présents sur le réseau Internet. Les liens vers ces autres ressources vous font quitter le Site. L'Éditeur décline toute responsabilité sur le contenu de ces sites tiers.</p>
+                
+                <h2>ARTICLE 5 - POLITIQUE DE COOKIES</h2>
+                <p>Le site Atelier Express Pro peut être amené à vous demander l’acceptation des cookies pour des besoins de statistiques et d’affichage. Un cookie est une information déposée sur votre disque dur par le serveur du site que vous visitez. Pour plus d'informations, veuillez consulter notre <a href="politique-confidentialite.html#cookies">Politique de Confidentialité</a>.</p>
+
+                <h2>ARTICLE 6 - CONTACT</h2>
+                <p>Pour tout signalement de contenus ou d’activités illicites, l’Utilisateur peut contacter l’Éditeur à l’adresse suivante : contact@atelierexpresspro.fr, ou par courrier recommandé avec accusé de réception adressé à l’Éditeur aux coordonnées précisées dans les présentes mentions légales.</p>
+
+                <p><em>Dernière mise à jour : 01/06/2025</em></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-atelier-express-pro">
+        <div class="container footer-grid-atelier-express-pro">
+            <div class="footer-col footer-col-about">
+                <a href="index.html" title="Accueil Atelier Express Pro - Solutions IT pour PME">
+                    <img src="img/atelier-express-pro-logo-principal-blanc.png" alt="Atelier Express Pro Logo Blanc - Solutions IT pour PME" class="footer-logo-img" onerror="this.style.display='none'; this.onerror=null; document.getElementById('logoFooterTextFallbackMentions').style.display='block';" loading="lazy">
+                    <span id="logoFooterTextFallbackMentions" class="logo-text-fallback" style="display:none; color:var(--custom-text-light-primary); margin-bottom:15px; font-size:22px; font-weight:bold;">ATELIER EXPRESS PRO</span>
+                </a>
+                <p data-i18n="footer.about.description">Atelier Express Pro, votre partenaire informatique de confiance. Nous aidons les PME à exploiter le plein potentiel de la technologie.</p>
+                <div class="social-media-links">
+                    <a href="#" aria-label="LinkedIn Atelier Express Pro" title="LinkedIn Atelier Express Pro"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Facebook Atelier Express Pro" title="Facebook Atelier Express Pro"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Twitter Atelier Express Pro" title="Twitter Atelier Express Pro"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer.explore.title">Explorer</h4>
+                <ul>
+                    <li><a href="index.html" data-i18n="footer.explore.home">Accueil</a></li>
+                    <li><a href="index.html#prestations-atelier-express-pro" data-i18n="footer.explore.services">Nos Prestations</a></li>
+                    <li><a href="index.html#pourquoi-atelier-express-pro" data-i18n="footer.explore.whyUs">Pourquoi Nous ?</a></li>
+                    <li><a href="a-propos.html" data-i18n="footer.explore.aboutUs">Qui sommes-nous ?</a></li>
+                    <li><a href="questionnaire.html" data-i18n="footer.explore.quoteSimulator">Simulateur de Devis</a></li>
+                    <li><a href="actualites.html" data-i18n="footer.explore.newsBlog">Actualités & Blog</a></li>
+                    <li><a href="partenariat.html" data-i18n="footer.explore.partnership">Devenir Partenaire</a></li>
+                    <li><a href="contact.html" data-i18n="footer.explore.contact">Contact</a></li>
+                </ul>
+            </div>
+             <div class="footer-col">
+                <h4 data-i18n="footer.keyServices.title">Services Clés</h4>
+                <ul>
+                    <li><a href="services/infogerance.html" data-i18n="services.infogerance.title">Infogérance & Maintenance</a></li>
+                    <li><a href="services/cybersecurite.html" data-i18n="services.cybersecurity.title">Cybersécurité & Sauvegarde</a></li>
+                    <li><a href="services/cloud.html" data-i18n="services.cloud.title">Solutions Cloud</a></li>
+                    <li><a href="services/reseau.html" data-i18n="services.network.title">Réseau & Infrastructure</a></li>
+                    <li><a href="services/audit.html" data-i18n="services.audit.title">Audit & Conseil</a></li>
+                    <li><a href="services/materiel.html" data-i18n="services.hardware.title">Matériel Informatique</a></li>
+                    <li><a href="services/supervision.html" data-i18n="services.supervision.title">Supervision Proactive</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-contact">
+                <h4 data-i18n="footer.contactUs.title">Nous Contacter</h4>
+                <address>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span data-i18n="footer.contact.address">123 Avenue de la Tech<br>75000 Paris, France</span></p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+33412345678" data-i18n="footer.contact.phone">04 12 34 56 78</a></p>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contact@atelierexpresspro.fr" data-i18n="footer.contact.email">contact@atelierexpresspro.fr</a></p>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom-atelier-express-pro">
+            <p>© <span class="current-year-atelier-express-pro"></span> <span data-i18n="footer.copyrightText">Atelier Express Pro SAS. Tous droits réservés.</span> | <a href="mentions-legales.html" data-i18n="footer.legalNotices" class="active">Mentions Légales</a> | <a href="politique-confidentialite.html" data-i18n="footer.privacyPolicy">Confidentialité</a></p>
+        </div>
+    </footer>
+
+    <a href="support-urgent.html" class="floating-help-btn-atelier-express-pro" aria-label="Contacter Atelier Express Pro pour un support urgent">
+        <i class="fas fa-headset" aria-hidden="true"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle-custom');
+            const mobileNavMenu = document.getElementById('mobileNavMenuUniversal');
+            const iconOpen = mobileMenuToggle ? mobileMenuToggle.querySelector('.icon-open') : null;
+            const iconClose = mobileMenuToggle ? mobileMenuToggle.querySelector('.icon-close') : null;
+
+            if (mobileMenuToggle && mobileNavMenu && iconOpen && iconClose) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mobileNavMenu.classList.toggle('active');
+                    
+                    if (mobileNavMenu.classList.contains('active')) {
+                        iconOpen.style.display = 'none';
+                        iconClose.style.display = 'inline';
+                    } else {
+                        iconOpen.style.display = 'inline';
+                        iconClose.style.display = 'none';
+                    }
+                });
+                mobileNavMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mobileNavMenu.classList.contains('active')) {
+                            mobileMenuToggle.click();
+                        }
+                    });
+                });
+            }
+
+            const yearSpan = document.querySelector('.current-year-atelier-express-pro');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>

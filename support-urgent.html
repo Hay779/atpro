@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervention IT Urgente Bouches-du-Rhône (13) | Atelier Express Pro</title>
+    <meta name="description" content="Panne IT critique dans les Bouches-du-Rhône (13) ? Atelier Express Pro intervient en urgence pour votre entreprise. Support rapide Marseille, Aix et alentours.">
+    <!-- <meta name="robots" content="noindex, nofollow"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="icon" href="img/LogoP.png" type="image/png"> <!-- Assuming LogoP.png is generic, otherwise change to LogoAtelierExpressPro.png -->
+
+    <link rel="stylesheet" href="style.css"> 
+
+    <style>
+        /* Styles spécifiques pour cette landing page urgente */
+        body.landing-page-urgent {
+            background-color: var(--custom-bg-white);
+            padding-top: 0; 
+        }
+
+        .hero-landing-urgent {
+            background-color: var(--site-dark-blue);
+            color: var(--custom-text-light-primary);
+            padding: 30px 0 50px 0; 
+            text-align: center;
+            position: relative; 
+        }
+
+        .hero-header-elements { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px; 
+        }
+
+        .hero-logo-atelier-express-pro img {
+            max-height: 35px;
+            filter: brightness(0) invert(1); 
+        }
+        .hero-logo-text-fallback {
+            display: none; 
+            font-weight: 700; 
+            font-size: 1.8rem; 
+            color: var(--custom-text-light-primary);
+        }
+
+        .hero-emergency-contact {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--custom-text-light-primary);
+        }
+        .hero-emergency-contact a {
+            color: var(--custom-text-light-primary);
+            text-decoration: none;
+        }
+        .hero-emergency-contact a:hover {
+            text-decoration: underline;
+        }
+        .hero-emergency-contact i {
+            margin-right: 8px;
+            color: var(--site-danger-color);
+        }
+
+        .hero-landing-urgent h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: var(--custom-text-light-primary);
+            margin-bottom: 15px;
+            line-height: 1.2;
+            margin-top: 0; 
+        }
+        .hero-landing-urgent .subtitle-landing {
+            font-size: 1.2rem;
+            color: var(--custom-text-light-secondary);
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-landing-urgent .btn-cta-urgence {
+            padding: 15px 35px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .hero-landing-urgent .btn-cta-urgence i {
+            margin-right: 10px;
+        }
+        .hero-landing-urgent .email-alternative {
+            font-size: 0.9rem;
+            color: var(--custom-text-light-secondary);
+            margin-bottom: 25px; 
+        }
+        .hero-landing-urgent .email-alternative a {
+            color: var(--custom-text-light-primary);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+         .hero-landing-urgent .email-alternative a:hover {
+            color: var(--custom-accent-magenta);
+        }
+
+        .benefits-urgent-shortlist {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .benefit-item-short {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: var(--custom-text-light-secondary);
+            padding: 8px 15px;
+            background-color: rgba(255,255,255,0.05);
+            border-radius: var(--custom-border-radius-buttons);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .benefit-item-short i {
+            color: var(--custom-accent-magenta);
+            font-size: 1.2em;
+        }
+        .benefit-item-short .intervention-prefix { /* Classe pour le texte "Intervention :" */
+            /* Reste visible par défaut */
+        }
+        .benefit-item-short.zone-highlight { 
+            font-weight: 500;
+            background-color: rgba(0, 115, 229, 0.1); 
+            border-color: var(--custom-accent-magenta);
+        }
+        .benefit-item-short.zone-highlight i {
+            color: #FFD700; 
+        }
+        
+        .why-us-urgent-section .section-title-custom {
+            margin-bottom: 30px;
+        }
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .why-us-item {
+            background-color: var(--custom-bg-light-gray);
+            padding: 25px;
+            border-radius: var(--custom-border-radius-cards);
+            text-align: center;
+            border: 1px solid var(--custom-border-subtle-lavender);
+        }
+        .why-us-item i {
+            font-size: 2rem;
+            color: var(--custom-accent-magenta);
+            margin-bottom: 15px;
+        }
+        .why-us-item h3 {
+            font-size: 1.2rem;
+            color: var(--custom-text-dark-primary);
+            margin-bottom: 10px;
+        }
+        .why-us-item p {
+            font-size: 0.9rem;
+            color: var(--custom-text-medium-gray);
+            line-height: 1.6;
+        }
+
+        .process-intervention-section .section-title-custom {
+            color: var(--site-text-dark);
+        }
+        .process-intervention-section .section-subtitle-custom {
+            color: var(--site-text-medium);
+        }
+        .process-intervention-section .process-step-card-v2.step-priority .process-step-icon-v2 {
+            background-color: var(--site-danger-color);
+            color: var(--custom-text-light-primary);
+        }
+        .process-intervention-section .process-step-card-v2.diagnostic-etape2-featured .process-step-icon-v2 {
+             background-color: var(--custom-accent-magenta);
+             color: var(--custom-text-light-primary);
+        }
+
+        .final-cta-urgent {
+            background-color: var(--custom-primary-dark);
+            color: var(--custom-text-light-primary);
+        }
+        .final-cta-urgent h2 {
+            color: var(--custom-text-light-primary);
+            margin-bottom: 25px;
+        }
+        .final-cta-urgent .email-alternative-footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        .final-cta-urgent .email-alternative-footer a {
+            color: var(--custom-text-light-primary);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .final-cta-urgent .email-alternative-footer a:hover {
+             color: var(--custom-accent-magenta);
+        }
+
+        .landing-footer-minimal {
+            background-color: var(--site-dark-blue);
+            color: var(--custom-text-light-secondary);
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .landing-footer-minimal p {
+            margin: 0;
+            color: var(--custom-text-light-secondary);
+        }
+        .landing-footer-minimal a {
+            color: var(--custom-text-light-secondary);
+            text-decoration: underline;
+        }
+        .landing-footer-minimal a:hover {
+            color: var(--custom-text-light-primary);
+        }
+        .intervention-zone-footer-note { 
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 5px;
+        }
+
+        .contract-info-section { 
+            text-align: center;
+            padding: 20px 15px 40px 15px; 
+            font-size: 0.9rem;
+            color: var(--site-text-medium);
+            background-color: var(--custom-bg-light-gray); 
+            border-top: 1px solid var(--custom-border-subtle-lavender); 
+        }
+        .contract-info-section p {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            max-width: 700px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        @media (min-width: 768px) { /* Desktop and larger tablets */
+            .hero-header-elements {
+                flex-direction: row;
+                justify-content: space-between; 
+                width: 100%; 
+                /* max-width: var(--container-width);  This variable is not defined in style.css, using fallback or remove */
+                max-width: 1140px; /* Fallback or adjust as needed */
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 15px; 
+            }
+             .hero-landing-urgent h1 {
+                font-size: 3.2rem;
+            }
+            .hero-landing-urgent .subtitle-landing {
+                font-size: 1.4rem;
+            }
+            .benefits-urgent-shortlist {
+                flex-direction: row;
+                justify-content: center;
+                gap: 15px; 
+            }
+        }
+        
+        @media (max-width: 767px) { /* Mobile and smaller tablets */
+            .benefit-item-short.zone-highlight .intervention-prefix {
+                display: none; /* Cache "Intervention :" sur mobile */
+            }
+        }
+
+        .hero-logo-atelier-express-pro .hero-logo-text-fallback {
+            display: none; 
+        }
+        .hero-logo-atelier-express-pro img[style*="display:none"] + .hero-logo-text-fallback {
+            display: block !important; 
+        }
+
+    </style>
+</head>
+<body class="landing-page-urgent">
+
+    <main>
+        <section class="hero-landing-urgent">
+            <div class="container">
+                <div class="hero-header-elements">
+                    <div class="hero-logo-atelier-express-pro">
+                        <a href="index.html" title="Accueil Atelier Express Pro">
+                             <img src="img/atelier-express-pro-logo-principal-blanc.png" alt="Logo Atelier Express Pro - Solutions IT pour PME"
+                                  onerror="this.style.display='none'; this.onerror=null; document.querySelector('.hero-logo-atelier-express-pro .hero-logo-text-fallback').style.display='block';"
+                                  loading="eager">
+                            <span class="hero-logo-text-fallback">ATELIER EXPRESS PRO</span>
+                        </a>
+                    </div>
+                    <div class="hero-emergency-contact">
+                        <a href="tel:+33912345678">
+                            <i class="fas fa-phone-volume"></i> Intervention Urgente : <strong>09 12 34 56 78</strong>
+                        </a>
+                    </div>
+                </div>
+
+                <h1><i class="fas fa-bolt" style="color: #FFD700; margin-right:10px;"></i>URGENCE INFORMATIQUE ?</h1>
+                <p class="subtitle-landing">Votre entreprise est bloquée ? Atelier Express Pro intervient rapidement pour diagnostiquer et résoudre vos pannes critiques et minimiser l'impact sur votre activité.</p>
+                
+                <a href="tel:+33912345678" class="btn btn-danger-custom btn-large btn-cta-urgence">
+                    <i class="fas fa-phone-alt"></i> Appelez le 09 12 34 56 78
+                </a>
+                <p class="email-alternative">
+                    Ou pour fournir plus de détails : <a href="mailto:urgence@atelierexpresspro.fr?subject=Demande%20de%20Support%20Urgent%20Entreprise%20[Page%20Support%20Site]">envoyez-nous un email <i class="fas fa-paper-plane"></i></a>
+                </p>
+                 <div class="benefits-urgent-shortlist">
+                    <span class="benefit-item-short"><i class="fas fa-check-circle"></i> Techniciens Experts </span>
+                    <span class="benefit-item-short"><i class="fas fa-tools"></i> Dépannage Efficace</span>
+                    <span class="benefit-item-short zone-highlight">
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <span class="intervention-prefix">Intervention : </span> <!-- Texte à cacher sur mobile -->
+                        <strong>Bouches-du-Rhône (13)</strong>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-us-urgent-section section-padding">
+            <div class="container">
+                <h2 class="section-title-custom">Pourquoi Choisir Atelier Express Pro pour Votre Urgence IT ?</h2>
+                <div class="why-us-grid">
+                    <div class="why-us-item">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Intervention Express</h3>
+                        <p>Nous priorisons les urgences pour une prise en charge et un diagnostic dans les plus brefs délais dans les Bouches-du-Rhône.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Expertise PME Locale</h3>
+                        <p>Nous comprenons les enjeux des entreprises du 13 et adaptons nos solutions pour un impact minimal.</p>
+                    </div>
+                    <div class="why-us-item">
+                        <i class="fas fa-comments"></i>
+                        <h3>Communication Claire</h3>
+                        <p>Nous vous tenons informé à chaque étape, du diagnostic à la résolution, en toute transparence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-intervention-section section-padding section-bg-light">
+            <div class="container">
+                <h2 class="section-title-custom">Notre Processus d'Intervention en Cas d'Urgence</h2>
+                <p class="section-subtitle-custom">Une méthodologie éprouvée pour une résolution efficace de votre problème critique.</p>
+
+                <!-- SECTION PROCESSUS -->
+                <!-- ÉTAPE 1 -->
+                <div class="process-step-card-v2 process-step-fullwidth step-priority first-step-spacing">
+                    <div class="process-step-fullwidth-content">
+                        <div class="process-step-icon-v2"><i class="fas fa-phone-volume"></i></div>
+                        <div class="process-step-text-content">
+                            <h3 class="process-step-title-v2">1. Contactez-Nous Immédiatement</h3>
+                            <p class="process-step-description-v2">
+                                En cas de problème critique dans les Bouches-du-Rhône, chaque minute compte. Appelez notre ligne dédiée.
+                            </p>
+                            <div class="urgent-contact-info">
+                                <p><strong>Numéro d'Urgence Prioritaire (Secteur 13) :</strong></p>
+                                <a href="tel:+33912345678" class="btn btn-danger-custom btn-large"> 
+                                    <i class="fas fa-bolt"></i> APPELEZ LE 09 12 34 56 78 
+                                </a>
+                                <p class="tarif-note">Tarif intervention d'urgence : contactez-nous pour une estimation.</p> 
+                            </div>
+                        </div>
+                        <div class="process-step-visual">
+                            <i class="fas fa-headset" style="font-size: 5em; color: var(--site-primary-blue-hover); opacity: 0.7;"></i>
+                            <p style="font-size:0.9em; margin-top:10px; color: var(--site-text-medium);">Assistance téléphonique directe</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 2 -->
+                <div class="process-step-card-v2 process-step-fullwidth diagnostic-etape2-featured">
+                    <div class="process-step-fullwidth-content">
+                        <div class="process-step-icon-v2">
+                            <i class="fas fa-magnifying-glass-chart"></i>
+                        </div>
+                        <div class="process-step-featured-text-alt"> 
+                            <h3 class="process-step-title-v2">2. Diagnostic Rapide & Conseil</h3>
+                            <p class="process-step-description-v2">
+                                Un technicien qualifié évalue avec vous la nature de la panne. Nous déterminons la meilleure approche pour une intervention rapide dans le 13.
+                            </p>
+                             <p class="step-sub-note-v2" style="color: var(--site-primary-blue); font-weight: 500; text-align: left; margin-top:10px;">
+                               <i class="fas fa-lightbulb"></i> Objectif : une solution claire et la plus rapide pour vous.
+                            </p>
+                        </div>
+                         <div class="process-step-featured-visual-alt">
+                            <i class="fas fa-chalkboard-teacher" style="font-size: 5em; color: var(--site-primary-blue-hover); opacity: 0.7;"></i>
+                            <p style="font-size:0.9em; margin-top:10px; color: var(--site-text-medium);">Analyse & conseils pour action ciblée</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="next-steps-title">Déroulement des interventions techniques :</h3>
+                <!-- ÉTAPES 3 & 4 -->
+                <div class="process-steps-grid-v2 two-column-grid"> 
+                    <div class="process-step-card-v2 step-priority">
+                        <div class="process-step-icon-v2"><i class="fas fa-laptop-medical"></i></div>
+                        <h3 class="process-step-title-v2">3. Intervention à Distance</h3>
+                        <p class="process-step-description-v2">Notre priorité : résolution rapide via prise en main à distance sécurisée de vos systèmes.</p>
+                        <div class="step-info-box-v2">
+                            <i class="fas fa-clock"></i>
+                            <span>Délai moyen : <strong>Moins de 4 heures</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="process-step-card-v2">
+                        <div class="process-step-icon-v2"><i class="fas fa-truck-medical"></i></div>
+                        <h3 class="process-step-title-v2">4. Intervention sur Site (13)</h3>
+                        <p class="step-sub-note-v2">Si résolution à distance impossible :</p>
+                        <p class="process-step-description-v2">Un technicien est dépêché sur votre site dans les Bouches-du-Rhône.</p>
+                        <div class="step-info-box-v2">
+                             <i class="fas fa-clock"></i>
+                            <span>Délai estimé : <strong>selon urgence/contrat</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÉTAPE 5 -->
+                <div class="process-step-card-v2 process-step-fullwidth last-step-spacing">
+                    <div class="process-step-fullwidth-content single-item-centered"> 
+                        <div class="process-step-icon-v2" style="margin-right:0; margin-bottom: 15px; background-color: var(--site-success-color); color:white;"><i class="fas fa-tasks"></i></div>
+                        <div class="process-step-text-content" style="text-align:center;">
+                            <h3 class="process-step-title-v2" style="text-align:center;">5. Résolution & Suivi Post-Intervention</h3>
+                            <p class="process-step-description-v2" style="text-align:center;">
+                                Nous confirmons le rétablissement de vos services et proposons un suivi pour éviter toute récidive.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                 <p class="process-footnote-v2">
+                    Les délais sont indicatifs et peuvent varier. Les clients sous contrat Atelier Express Pro bénéficient d'une prise en charge et de délais garantis selon leur niveau de service dans les Bouches-du-Rhône.
+                </p>
+            </div>
+        </section>
+
+        <section class="final-cta-urgent section-padding text-center">
+            <div class="container">
+                <h2>Panne Informatique dans les Bouches-du-Rhône (13) ?<br>Ne Restez Pas Bloqué !</h2>
+                <p style="font-size: 1.1rem; color:var(--custom-text-light-secondary); margin-bottom:30px;">Contactez nos experts locaux dès maintenant pour une assistance rapide et professionnelle.</p>
+                <a href="tel:+33912345678" class="btn btn-danger-custom btn-large btn-cta-urgence">
+                    <i class="fas fa-phone-alt"></i> Urgence 13 : 09 12 34 56 78
+                </a>
+                <p class="email-alternative-footer">
+                    Besoin de joindre des fichiers ou de détailler votre demande ?
+                    <a href="mailto:urgence-13@atelierexpresspro.fr?subject=Demande%20de%20Support%20Urgent%20Bouches-du-Rhône%20[Page%20Support%20Site]">Envoyez-nous un email <i class="fas fa-envelope-open-text"></i></a>
+                </p>
+            </div>
+        </section>
+        
+        <section class="contract-info-section">
+            <div class="container">
+                <p><strong>Clients sous contrat :</strong> Veuillez utiliser les coordonnées d'astreinte spécifiques qui vous ont été communiquées pour une assistance immédiate et prioritaire dans votre secteur.</p>
+                <p><em>*Disponibilité 24/7 pour les clients sous contrat. Hors contrat, intervention selon disponibilité et grille tarifaire urgence.</em></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="landing-footer-minimal">
+        <div class="container">
+            <p>© <span class="current-year-atelier-express-pro"></span> Atelier Express Pro SAS. Tous droits réservés.</p>
+            <p class="intervention-zone-footer-note">Intervention rapide dans les Bouches-du-Rhône (13), incluant Marseille, Aix-en-Provence et environs.</p>
+            <p><a href="mentions-legales.html">Mentions Légales</a> | <a href="politique-confidentialite.html">Politique de Confidentialité</a> | <a href="index.html">Retour au site principal</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearSpan = document.querySelector('.current-year-atelier-express-pro');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+
+</body>
+</html>
