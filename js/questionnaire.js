@@ -1,4 +1,4 @@
-// --- START OF FILE js/questionnaire.js ---
+// Fichier : js/questionnaire.js
 
 // Variables pour suivre l'état du questionnaire
 let currentStep = "accueil";
@@ -15,15 +15,14 @@ const step1Label = document.getElementById('step-1-label');
 const step2Label = document.getElementById('step-2-label');
 const step3Label = document.getElementById('step-3-label');
 const questionContainer = document.getElementById('question-container');
-const questionnaireHeader = document.querySelector('.header-fullwidth-questionnaire'); 
+const questionnaireHeader = document.querySelector('.header-fullwidth-questionnaire');
 
 // Historique des étapes pour le bouton retour
 let stepHistory = [];
 
 // Fonction pour mettre à jour la barre de progression
 function updateProgress(value) {
-  // La classe de .progress-fill-atelier-express-pro est dans le HTML, donc le JS peut utiliser l'ID
-  const progressFillElement = document.getElementById('progressFill'); 
+  const progressFillElement = document.getElementById('progressFill');
   if (progressFillElement) {
     progressFillElement.style.width = value + '%';
   }
@@ -45,18 +44,18 @@ function generateQuestionHTML(stepId, stepConfig) {
           <button id="${stepConfig.responseKey}Btn" class="input-button btn" type="button">Suivant</button>
         </div>
       </div>
-    `; 
-  } else { 
-    let choicesHTML = ''; 
+    `;
+  } else {
+    let choicesHTML = '';
     if (stepConfig.choices && stepConfig.choices.length > 0) {
-        stepConfig.choices.forEach((choice, index) => {
-            let iconHTML = choice.icon ? `<i>${choice.icon}</i>` : ''; 
-            choicesHTML += `<button class="choice" data-value="${choice.value}" type="button">${iconHTML}${choice.label}</button>`;
-        });
+      stepConfig.choices.forEach((choice, index) => {
+        let iconHTML = choice.icon ? `<i>${choice.icon}</i>` : '';
+        choicesHTML += `<button class="choice" data-value="${choice.value}" type="button">${iconHTML}${choice.label}</button>`;
+      });
     } else {
-        choicesHTML = "<p style='color: red; text-align: center;'>Aucun choix n'a été généré pour cette question (vérifiez config.js).</p>"; 
+      choicesHTML = "<p style='color: red; text-align: center;'>Aucun choix n'a été généré pour cette question (vérifiez config.js).</p>";
     }
-    
+
     html = `
       <div class="question-section active" data-step-id="${stepId}">
         <div class="question">${stepConfig.question}</div>
@@ -70,7 +69,6 @@ function generateQuestionHTML(stepId, stepConfig) {
   return html;
 }
 
-
 // Fonction pour afficher une étape du questionnaire
 function showStep(stepId) {
   currentStep = stepId;
@@ -78,20 +76,20 @@ function showStep(stepId) {
 
   if (!stepConfig) {
     console.error(`Configuration de l'étape non trouvée pour: ${stepId}`);
-    if(questionContainer) questionContainer.innerHTML = `<div class="error-message" style="display:block; text-align:center; padding:20px;">Configuration d'étape manquante. Veuillez contacter le support.</div>`;
+    if (questionContainer) questionContainer.innerHTML = `<div class="error-message" style="display:block; text-align:center; padding:20px;">Configuration d'étape manquante. Veuillez contacter le support.</div>`;
     return;
   }
-
-  // ===== GESTION DE LA VISIBILITÉ DU HEADER =====
+  
+  // ... (le reste de la fonction showStep reste inchangé jusqu'à la fin de la fonction)
   if (questionnaireHeader) {
-    const isMobileView = window.innerWidth <= 767; 
+    const isMobileView = window.innerWidth <= 767;
     if (stepId === 'accueil') {
-      questionnaireHeader.style.display = 'block'; 
+      questionnaireHeader.style.display = 'block';
     } else {
       if (isMobileView) {
-        questionnaireHeader.style.display = 'none'; 
+        questionnaireHeader.style.display = 'none';
       } else {
-        questionnaireHeader.style.display = 'block'; 
+        questionnaireHeader.style.display = 'block';
       }
     }
   }
@@ -103,30 +101,29 @@ function showStep(stepId) {
   if (step2Label) step2Label.classList.remove('current');
   if (step3Label) step3Label.classList.remove('current');
 
-  const SEUIL_FIN_UTILISATEUR = 30; 
-  const SEUIL_DEBUT_DEVIS = 70; 
+  const SEUIL_FIN_UTILISATEUR = 30;
+  const SEUIL_DEBUT_DEVIS = 70;
 
   if (stepId === 'accueil') {
     if (step1Label) step1Label.classList.add('current');
   } else if (stepConfig.nextStep === 'fin' || currentStep.startsWith("contact-")) {
     if (step3Label) step3Label.classList.add('current');
   } else if (currentService && (stepConfig.responseKey || stepConfig.choices)) {
-    if (currentProgress >= 0 && currentProgress <= SEUIL_FIN_UTILISATEUR) { 
+    if (currentProgress >= 0 && currentProgress <= SEUIL_FIN_UTILISATEUR) {
       if (step1Label) step1Label.classList.add('current');
     } else if (currentProgress > SEUIL_FIN_UTILISATEUR && currentProgress < SEUIL_DEBUT_DEVIS) {
       if (step2Label) step2Label.classList.add('current');
-    } else if (currentProgress >= SEUIL_DEBUT_DEVIS) { 
+    } else if (currentProgress >= SEUIL_DEBUT_DEVIS) {
       if (step3Label) step3Label.classList.add('current');
     }
   } else {
-      if (step1Label) step1Label.classList.add('current'); 
+    if (step1Label) step1Label.classList.add('current');
   }
 
-  if(backBtn) backBtn.style.display = (stepId === 'accueil' || stepHistory.length === 0) ? 'none' : 'flex';
+  if (backBtn) backBtn.style.display = (stepId === 'accueil' || stepHistory.length === 0) ? 'none' : 'flex';
 
-  const generatedHTML = generateQuestionHTML(stepId, stepConfig); 
-  if(questionContainer) questionContainer.innerHTML = generatedHTML; 
-
+  const generatedHTML = generateQuestionHTML(stepId, stepConfig);
+  if (questionContainer) questionContainer.innerHTML = generatedHTML;
 
   if (stepConfig.type === 'text' || stepConfig.type === 'email' || stepConfig.type === 'tel') {
     setTimeout(() => {
@@ -134,11 +131,11 @@ function showStep(stepId) {
       if (inputField) {
         let existingResponse = '';
         if (currentStep.startsWith("contact-")) {
-            existingResponse = userResponses[stepConfig.responseKey];
+          existingResponse = userResponses[stepConfig.responseKey];
         } else if (currentService && userResponses.details[currentService] && userResponses.details[currentService][stepConfig.responseKey]) {
-            existingResponse = userResponses.details[currentService][stepConfig.responseKey];
-        } else if(userResponses[stepConfig.responseKey]) {
-            existingResponse = userResponses[stepConfig.responseKey];
+          existingResponse = userResponses.details[currentService][stepConfig.responseKey];
+        } else if (userResponses[stepConfig.responseKey]) {
+          existingResponse = userResponses[stepConfig.responseKey];
         }
 
         if (existingResponse) {
@@ -153,27 +150,27 @@ function showStep(stepId) {
     const proceedButton = document.getElementById(`${stepConfig.responseKey}Btn`);
     const inputElement = document.getElementById(stepConfig.responseKey);
 
-    const validateAndProceed = function() {
+    const validateAndProceed = function () {
       const errorElement = document.getElementById(`${stepConfig.responseKey}Error`);
       let inputValue = inputElement.value.trim();
       let isValid = true;
 
       const isContactQuestion = currentStep.startsWith("contact-");
       const isRequiredField = isContactQuestion ||
-                              (stepConfig.type === 'email') ||
-                              (stepConfig.type === 'tel') ||
-                              stepConfig.required === true;
+        (stepConfig.type === 'email') ||
+        (stepConfig.type === 'tel') ||
+        stepConfig.required === true;
 
       if (isRequiredField && inputValue === '') {
-          isValid = false;
+        isValid = false;
       } else if (inputValue !== '') {
-          if (stepConfig.type === 'email') {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(inputValue)) isValid = false;
-          } else if (stepConfig.type === 'tel') {
-            const telPattern = /^[+]?[\d\s()-]{8,}$/; 
-            if (!telPattern.test(inputValue)) isValid = false;
-          }
+        if (stepConfig.type === 'email') {
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(inputValue)) isValid = false;
+        } else if (stepConfig.type === 'tel') {
+          const telPattern = /^[+]?[\d\s()-]{8,}$/;
+          if (!telPattern.test(inputValue)) isValid = false;
+        }
       }
 
       if (!isValid && isRequiredField) {
@@ -183,15 +180,15 @@ function showStep(stepId) {
         return;
       }
 
-      if(errorElement) errorElement.style.display = 'none';
+      if (errorElement) errorElement.style.display = 'none';
 
       if (isContactQuestion) {
         userResponses[stepConfig.responseKey] = inputValue;
       } else if (currentService) {
-        if(!userResponses.details[currentService]) userResponses.details[currentService] = {};
+        if (!userResponses.details[currentService]) userResponses.details[currentService] = {};
         userResponses.details[currentService][stepConfig.responseKey] = inputValue;
       } else {
-          userResponses[stepConfig.responseKey] = inputValue;
+        userResponses[stepConfig.responseKey] = inputValue;
       }
 
       stepHistory.push(currentStep);
@@ -204,16 +201,16 @@ function showStep(stepId) {
     };
 
     if (proceedButton) proceedButton.addEventListener('click', validateAndProceed);
-    if (inputElement) inputElement.addEventListener('keypress', function(event) {
+    if (inputElement) inputElement.addEventListener('keypress', function (event) {
       if (event.key === 'Enter') {
         event.preventDefault();
-        if(proceedButton) proceedButton.click();
+        if (proceedButton) proceedButton.click();
       }
     });
 
   } else if (stepConfig.choices) {
-    document.querySelectorAll('.choice').forEach(button => { 
-      button.addEventListener('click', function() {
+    document.querySelectorAll('.choice').forEach(button => {
+      button.addEventListener('click', function () {
         const choiceValue = this.getAttribute('data-value');
 
         if (stepId === 'accueil') {
@@ -225,7 +222,7 @@ function showStep(stepId) {
           }
           userResponses.details[currentService][stepConfig.responseKey] = choiceValue;
         } else if (stepConfig.responseKey) {
-            userResponses[stepConfig.responseKey] = choiceValue;
+          userResponses[stepConfig.responseKey] = choiceValue;
         }
 
         stepHistory.push(currentStep);
@@ -243,13 +240,47 @@ function showStep(stepId) {
   }
 }
 
-// Fonction pour gérer la fin du quiz
+// =========================================================================
+// == DEBUT DE LA MODIFICATION IMPORTANTE ==
+// =========================================================================
+
+// Nouvelle fonction pour envoyer les données au serveur
+async function sendQuestionnaireData(responses) {
+    console.log("Préparation de l'envoi des données du questionnaire :", responses);
+    
+    try {
+        // L'URL de ton API pour le questionnaire
+        const apiUrl = 'https://atpro.onrender.com/api/questionnaire'; 
+
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(responses) // On envoie l'objet complet des réponses
+        });
+
+        if (response.ok) {
+            console.log('Données du questionnaire envoyées avec succès au serveur.');
+        } else {
+            const errorData = await response.json();
+            console.error('Erreur du serveur lors de l\'envoi du questionnaire:', errorData);
+        }
+    } catch (error) {
+        console.error('Erreur réseau lors de l\'envoi du questionnaire:', error);
+    }
+}
+
+// Fonction pour gérer la fin du quiz (MODIFIÉE pour appeler sendQuestionnaireData)
 function handleEndOfQuiz() {
   updateProgress(100);
   if (step1Label) step1Label.classList.remove('current');
   if (step2Label) step2Label.classList.remove('current');
   if (step3Label) step3Label.classList.add('current');
   console.log('Réponses utilisateur finales:', userResponses);
+
+  // APPEL DE LA NOUVELLE FONCTION D'ENVOI
+  sendQuestionnaireData(userResponses);
 
   if(backBtn) backBtn.style.display = 'none';
 
@@ -262,6 +293,7 @@ function handleEndOfQuiz() {
     }
   }
 
+  // Le reste de la fonction qui affiche l'écran de confirmation ne change pas
   const confirmationHTML = `
     <div class="confirmation-box">
       <div class="confirmation-icon"><i class="fas fa-check-circle"></i></div>
@@ -279,7 +311,7 @@ function handleEndOfQuiz() {
   `; 
   if(questionContainer) questionContainer.innerHTML = confirmationHTML;
 
-
+  // Le reste de la logique pour le SMS ne change pas
   setTimeout(() => {
     const smsPhoneField = document.getElementById('smsPhone');
     if (smsPhoneField) smsPhoneField.focus();
@@ -317,28 +349,30 @@ function handleEndOfQuiz() {
   }
 }
 
+// =========================================================================
+// == FIN DE LA MODIFICATION IMPORTANTE ==
+// =========================================================================
+
 // Fonction pour revenir à l'étape précédente
 function goBack() {
   if (stepHistory.length > 0) {
-    const previousStepId = stepHistory.pop(); 
-    
-    if (previousStepId === 'accueil' || (stepHistory.length === 0 && questionnaireConfig[previousStepId] && questionnaireConfig[previousStepId].progress <= 10) ) {
-        currentService = '';
-        userResponses.service = '';
-        userResponses.details = {};
-        showStep('accueil'); 
+    const previousStepId = stepHistory.pop();
+    if (previousStepId === 'accueil' || (stepHistory.length === 0 && questionnaireConfig[previousStepId] && questionnaireConfig[previousStepId].progress <= 10)) {
+      currentService = '';
+      userResponses.service = '';
+      userResponses.details = {};
+      showStep('accueil');
     } else {
-        if (userResponses.service && !previousStepId.startsWith("contact-")) {
-            currentService = userResponses.service; 
-        }
-        showStep(previousStepId);
+      if (userResponses.service && !previousStepId.startsWith("contact-")) {
+        currentService = userResponses.service;
+      }
+      showStep(previousStepId);
     }
   }
 }
 
-
 // Initialiser le questionnaire
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   if (typeof questionnaireConfig === 'undefined') {
     console.error("questionnaireConfig n'est pas défini. Vérifiez que config.js est chargé et correct.");
     if (questionContainer) questionContainer.innerHTML = "<p style='color:red;text-align:center;'>Erreur de configuration du questionnaire.</p>";
@@ -347,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const urlParams = new URLSearchParams(window.location.search);
   const preselectedType = urlParams.get('type');
-  let initialStep = 'accueil'; 
+  let initialStep = 'accueil';
 
   if (preselectedType) {
     let mappedServiceKey = '';
@@ -356,7 +390,6 @@ document.addEventListener('DOMContentLoaded', function() {
       case 'reseau': mappedServiceKey = 'reseau'; break;
       case 'cybersecurite': mappedServiceKey = 'securite'; break;
       case 'audit': mappedServiceKey = 'audit'; break;
-      // Ajoutez d'autres cas si nécessaire pour 'cloud' et 'materiel'
       case 'cloud': mappedServiceKey = 'cloud'; break;
       case 'materiel': mappedServiceKey = 'materiel'; break;
     }
@@ -365,14 +398,12 @@ document.addEventListener('DOMContentLoaded', function() {
       currentService = mappedServiceKey;
       userResponses.service = mappedServiceKey;
       initialStep = mappedServiceKey + "-1";
-      stepHistory.push('accueil'); 
+      stepHistory.push('accueil');
     }
-  } 
+  }
   showStep(initialStep);
 
   if (backBtn) {
-      backBtn.addEventListener('click', goBack);
+    backBtn.addEventListener('click', goBack);
   }
 });
-
-// --- END OF FILE js/questionnaire.js ---
