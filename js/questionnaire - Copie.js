@@ -1,4 +1,4 @@
-// Fichier : js/questionnaire.js (VERSION CORRIGÉE)
+// Fichier : js/questionnaire.js
 
 // Variables pour suivre l'état du questionnaire
 let currentStep = "accueil";
@@ -80,6 +80,7 @@ function showStep(stepId) {
     return;
   }
   
+  // ... (le reste de la fonction showStep reste inchangé jusqu'à la fin de la fonction)
   if (questionnaireHeader) {
     const isMobileView = window.innerWidth <= 767;
     if (stepId === 'accueil') {
@@ -130,7 +131,7 @@ function showStep(stepId) {
       if (inputField) {
         let existingResponse = '';
         if (currentStep.startsWith("contact-")) {
-          existingResponse = userResponses[stepConfig.responseKey] || '';
+          existingResponse = userResponses[stepConfig.responseKey];
         } else if (currentService && userResponses.details[currentService] && userResponses.details[currentService][stepConfig.responseKey]) {
           existingResponse = userResponses.details[currentService][stepConfig.responseKey];
         } else if (userResponses[stepConfig.responseKey]) {
@@ -153,20 +154,32 @@ function showStep(stepId) {
       const errorElement = document.getElementById(`${stepConfig.responseKey}Error`);
       let inputValue = inputElement.value.trim();
       let isValid = true;
-      const isContactQuestion = currentStep.startsWith("contact-");
-      const isRequiredField = isContactQuestion || (stepConfig.type === 'email') || (stepConfig.type === 'tel') || stepConfig.required === true;
 
-      if (isRequiredField && inputValue === '') { isValid = false; } 
-      else if (inputValue !== '') {
-        if (stepConfig.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue)) isValid = false;
-        else if (stepConfig.type === 'tel' && !/^[+]?[\d\s()-]{8,}$/.test(inputValue)) isValid = false;
+      const isContactQuestion = currentStep.startsWith("contact-");
+      const isRequiredField = isContactQuestion ||
+        (stepConfig.type === 'email') ||
+        (stepConfig.type === 'tel') ||
+        stepConfig.required === true;
+
+      if (isRequiredField && inputValue === '') {
+        isValid = false;
+      } else if (inputValue !== '') {
+        if (stepConfig.type === 'email') {
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(inputValue)) isValid = false;
+        } else if (stepConfig.type === 'tel') {
+          const telPattern = /^[+]?[\d\s()-]{8,}$/;
+          if (!telPattern.test(inputValue)) isValid = false;
+        }
       }
+
       if (!isValid && isRequiredField) {
         errorElement.textContent = stepConfig.errorMessage || "Ce champ est requis ou le format est incorrect.";
         errorElement.style.display = 'block';
         inputElement.focus();
         return;
       }
+
       if (errorElement) errorElement.style.display = 'none';
 
       if (isContactQuestion) {
@@ -179,34 +192,48 @@ function showStep(stepId) {
       }
 
       stepHistory.push(currentStep);
+
       if (stepConfig.nextStep === 'fin') {
         handleEndOfQuiz();
       } else {
         showStep(stepConfig.nextStep);
       }
     };
+
     if (proceedButton) proceedButton.addEventListener('click', validateAndProceed);
-    if (inputElement) inputElement.addEventListener('keypress', (event) => {
+    if (inputElement) inputElement.addEventListener('keypress', function (event) {
       if (event.key === 'Enter') {
         event.preventDefault();
         if (proceedButton) proceedButton.click();
       }
     });
+
   } else if (stepConfig.choices) {
     document.querySelectorAll('.choice').forEach(button => {
       button.addEventListener('click', function () {
         const choiceValue = this.getAttribute('data-value');
+
         if (stepId === 'accueil') {
           currentService = choiceValue;
           userResponses.service = choiceValue;
         } else if (stepConfig.responseKey && currentService) {
-          if (!userResponses.details[currentService]) userResponses.details[currentService] = {};
+          if (!userResponses.details[currentService]) {
+            userResponses.details[currentService] = {};
+          }
           userResponses.details[currentService][stepConfig.responseKey] = choiceValue;
         } else if (stepConfig.responseKey) {
           userResponses[stepConfig.responseKey] = choiceValue;
         }
+
         stepHistory.push(currentStep);
-        let nextStepValue = typeof stepConfig.nextStep === 'function' ? stepConfig.nextStep(choiceValue) : stepConfig.nextStep;
+
+        let nextStepValue;
+        if (typeof stepConfig.nextStep === 'function') {
+          nextStepValue = stepConfig.nextStep(choiceValue);
+        } else {
+          nextStepValue = stepConfig.nextStep;
+        }
+
         showStep(nextStepValue);
       });
     });
@@ -214,17 +241,25 @@ function showStep(stepId) {
 }
 
 // =========================================================================
-// == NOUVELLE FONCTION POUR ENVOYER LES DONNÉES AU SERVEUR ==
+// == DEBUT DE LA MODIFICATION IMPORTANTE ==
 // =========================================================================
+
+// Nouvelle fonction pour envoyer les données au serveur
 async function sendQuestionnaireData(responses) {
     console.log("Préparation de l'envoi des données du questionnaire :", responses);
+    
     try {
+        // L'URL de ton API pour le questionnaire
         const apiUrl = 'https://atpro.onrender.com/api/questionnaire'; 
+
         const response = await fetch(apiUrl, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(responses)
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(responses) // On envoie l'objet complet des réponses
         });
+
         if (response.ok) {
             console.log('Données du questionnaire envoyées avec succès au serveur.');
         } else {
@@ -244,9 +279,8 @@ function handleEndOfQuiz() {
   if (step3Label) step3Label.classList.add('current');
   console.log('Réponses utilisateur finales:', userResponses);
 
-  // --- APPEL DE LA NOUVELLE FONCTION D'ENVOI ---
+  // APPEL DE LA NOUVELLE FONCTION D'ENVOI
   sendQuestionnaireData(userResponses);
-  // ---------------------------------------------
 
   if(backBtn) backBtn.style.display = 'none';
 
@@ -259,6 +293,7 @@ function handleEndOfQuiz() {
     }
   }
 
+  // Le reste de la fonction qui affiche l'écran de confirmation ne change pas
   const confirmationHTML = `
     <div class="confirmation-box">
       <div class="confirmation-icon"><i class="fas fa-check-circle"></i></div>
@@ -266,6 +301,7 @@ function handleEndOfQuiz() {
       <p>Un expert Atelier Express Pro vous contactera pour votre projet dans les <span class="highlight">24 heures</span> ouvrées.</p>
       <p>🎁 En attendant, voici votre <span class="highlight">code de réduction de bienvenue de 250 €</span> à mentionner lors de votre échange :</p>
       <div class="code-offre">BIENVENUE250</div>
+      
       <p style="margin-top: 2rem;">📱 Souhaitez-vous recevoir ce code par SMS ?</p>
       <form id="smsForm" class="form-input-group">
         <input type="tel" id="smsPhone" class="input-field" placeholder="Votre numéro de téléphone" value="${userResponses.telephone || ''}">
@@ -275,6 +311,7 @@ function handleEndOfQuiz() {
   `; 
   if(questionContainer) questionContainer.innerHTML = confirmationHTML;
 
+  // Le reste de la logique pour le SMS ne change pas
   setTimeout(() => {
     const smsPhoneField = document.getElementById('smsPhone');
     if (smsPhoneField) smsPhoneField.focus();
@@ -289,12 +326,14 @@ function handleEndOfQuiz() {
       const telPattern = /^[+]?[\d\s()-]{8,}$/;
       if (phoneNumber && telPattern.test(phoneNumber)) {
         console.log(`Demande d'envoi SMS au ${phoneNumber} avec le code BIENVENUE250`);
+        
         this.textContent = 'Envoyé !';
         this.disabled = true;
         smsPhoneInput.disabled = true;
         setTimeout(() => {
           alert('Le code BIENVENUE250 a été (simulé) envoyé au ' + phoneNumber + '. Un conseiller vous contactera bientôt.');
         }, 500);
+
       } else {
         alert('Veuillez entrer un numéro de téléphone valide.');
         smsPhoneInput.focus();
@@ -310,13 +349,18 @@ function handleEndOfQuiz() {
   }
 }
 
+// =========================================================================
+// == FIN DE LA MODIFICATION IMPORTANTE ==
+// =========================================================================
+
 // Fonction pour revenir à l'étape précédente
 function goBack() {
   if (stepHistory.length > 0) {
     const previousStepId = stepHistory.pop();
     if (previousStepId === 'accueil' || (stepHistory.length === 0 && questionnaireConfig[previousStepId] && questionnaireConfig[previousStepId].progress <= 10)) {
       currentService = '';
-      userResponses = { service: '', details: {} }; // Réinitialisation plus complète
+      userResponses.service = '';
+      userResponses.details = {};
       showStep('accueil');
     } else {
       if (userResponses.service && !previousStepId.startsWith("contact-")) {
@@ -334,6 +378,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (questionContainer) questionContainer.innerHTML = "<p style='color:red;text-align:center;'>Erreur de configuration du questionnaire.</p>";
     return;
   }
+
   const urlParams = new URLSearchParams(window.location.search);
   const preselectedType = urlParams.get('type');
   let initialStep = 'accueil';
@@ -348,6 +393,7 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'cloud': mappedServiceKey = 'cloud'; break;
       case 'materiel': mappedServiceKey = 'materiel'; break;
     }
+
     if (mappedServiceKey && questionnaireConfig[mappedServiceKey + "-1"]) {
       currentService = mappedServiceKey;
       userResponses.service = mappedServiceKey;
@@ -356,6 +402,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   showStep(initialStep);
+
   if (backBtn) {
     backBtn.addEventListener('click', goBack);
   }
