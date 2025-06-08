@@ -1,0 +1,99 @@
+---
+layout: "base.njk"
+title: "Solutions Réseau & Téléphonie IP pour PME | Atelier Express Pro"
+description: "Atelier Express Pro conçoit, installe et maintient vos infrastructures réseau et solutions de téléphonie IP. Optimisez votre connectivité et vos communications d'entreprise."
+---
+
+<section class="hero-service"> 
+    <div class="container">
+        <div class="breadcrumb-service">
+            <a href="/">Accueil</a> > <a href="/services/">Nos Services</a> > <span class="current-service">Réseau & Télécoms</span>
+        </div>
+        <h1>Infrastructure Réseau & Téléphonie <span class="highlight-text-service">IP Performante</span></h1>
+        <p class="hero-subtitle-service">Assurez une connectivité sans faille et des communications fluides pour votre PME grâce aux solutions réseau et téléphonie sur IP conçues par Atelier Express Pro.</p>
+        <a href="/contact/?sujet=DemandeReseauTelecom" class="btn btn-accent-custom btn-large">Évaluer Vos Besoins Réseau</a>
+    </div>
+</section>
+
+<section id="reseau-introduction" class="service-content-section"> 
+    <div class="container">
+        <div class="service-content-grid"> 
+            <div class="service-text-content">
+                <h2 class="section-title-left-custom">Votre Réseau : L'Artère Vitale de <span class="highlight-text">Votre Entreprise</span></h2>
+                <p>Une infrastructure réseau fiable et performante est le socle de toute activité numérique moderne. Elle garantit l'accès rapide à vos données, la fluidité de vos applications métiers et l'efficacité de vos communications internes et externes. De même, une solution de téléphonie IP moderne peut transformer votre manière de communiquer.</p>
+                <p>Atelier Express Pro vous accompagne de A à Z : audit de l'existant, conception d'architecture réseau sur mesure, câblage, installation et configuration des équipements (routeurs, switchs, pare-feu, bornes Wi-Fi), mise en place de téléphonie sur IP (VoIP), et maintenance proactive.</p>
+            </div>
+            <div class="service-image-content">
+                <img src="/img/reseau-telecom-atelier-express-pro.jpg" alt="Schéma d'une infrastructure réseau d'entreprise - Atelier Express Pro" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="reseau-solutions-offre" class="service-content-section section-bg-light">
+    <!-- ... Colle ici le contenu de la section des solutions réseau ... -->
+</section>
+
+<section id="reseau-benefits-atelier-express-pro" class="service-content-section">
+    <!-- ... Colle ici le contenu de la section des bénéfices réseau ... -->
+</section>
+
+<section id="faq-reseau-section" class="service-content-section section-bg-light"> 
+    <div class="container">
+        <h2 class="section-title-custom faq-title">Questions Fréquentes sur les <span class="highlight-text">Réseaux & Télécoms</span></h2> 
+        <dl class="faq-service"> 
+            <!-- ... Colle ici le contenu de la FAQ ... -->
+        </dl>
+    </div>
+</section>
+
+<section class="service-content-section related-services-section"> 
+    <div class="container">
+        <h2 class="section-title-custom">Services <span class="highlight-text">Associés à Votre Infrastructure</span></h2>
+        <p class="section-subtitle-custom">Une infrastructure réseau et télécom performante est la base de nombreux autres services essentiels.</p>
+        <div class="related-services-grid">
+            <a href="/services/cybersecurite/" class="related-service-card">
+                <i class="fas fa-shield-virus"></i>
+                <h4>Cybersécurité</h4>
+                <p>Sécurisez votre réseau contre toutes les menaces.</p>
+            </a>
+            <a href="/services/cloud/" class="related-service-card">
+                <i class="fas fa-cloud"></i>
+                <h4>Solutions Cloud</h4>
+                <p>Accédez à vos services Cloud via un réseau optimisé.</p>
+            </a>
+            <a href="/services/infogerance/" class="related-service-card">
+                <i class="fas fa-cogs"></i>
+                <h4>Infogérance</h4>
+                <p>Laissez-nous gérer et maintenir votre infrastructure réseau.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+{# Le script spécifique à cette page pour la FAQ #}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-service dt');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.nextElementSibling;
+            const isExpanded = item.getAttribute('aria-expanded') === 'true';
+
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.setAttribute('aria-expanded', 'false');
+                    otherItem.nextElementSibling.hidden = true;
+                }
+            });
+
+            item.setAttribute('aria-expanded', !isExpanded);
+            answer.hidden = isExpanded;
+        });
+        if (item.getAttribute('aria-expanded') !== 'true') {
+            item.nextElementSibling.hidden = true;
+        }
+    });
+});
+</script>

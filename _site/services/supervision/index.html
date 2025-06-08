@@ -1,0 +1,295 @@
+<!-- Fichier : src/_includes/base.njk -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervision Informatique Proactive 24/7 pour PME | Atelier Express Pro</title>
+    <meta name="description" content="Service de supervision et monitoring IT 24/7 par Atelier Express Pro. Anticipez les pannes, optimisez les performances et assurez la continuité de votre activité.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="icon" href="/img/LogoAtelierExpressPro.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Fichier : src/_includes/header.njk -->
+
+<header class="site-header-custom">
+    <div class="container header-custom-container">
+        <div class="logo-atelier-express-pro-custom">
+            <a href="/" title="Accueil Atelier Express Pro - Solutions IT pour PME">
+                <picture>
+                    <source media="(max-width:850px)" srcset="/img/logoP.png">
+                    <img src="/img/LogoAtelierExpressPro.png" alt="Logo Atelier Express Pro - Solutions IT pour PME"
+                         onerror="this.style.display='none'; this.onerror=null; document.getElementById('logoTextFallbackHeader').style.display='block';"
+                         loading="eager">
+                </picture>
+                <span id="logoTextFallbackHeader" class="logo-text-fallback" style="display:none;">ATELIER EXPRESS PRO</span>
+            </a>
+        </div>
+        <nav class="main-nav-custom" aria-label="Navigation principale de bureau">
+            <!-- Liens de navigation principale desktop (si ajoutés) -->
+        </nav>
+    
+        <div class="header-actions-combined">
+            <a href="tel:+33412345678" class="phone-link-header">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i> 
+                <span class="phone-text-header">04 12 34 56 78</span>
+            </a>
+            <a href="/questionnaire.html" class="btn btn-primary-custom cta-header-main" data-i18n="nav.startQuote">Commencer votre devis</a>
+            
+            <button class="mobile-menu-toggle-custom" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNavMenuUniversal">
+                <i class="fas fa-bars icon-open" aria-hidden="true"></i>
+                <i class="fas fa-times icon-close" aria-hidden="true" style="display: none;"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <nav class="mobile-nav-custom" id="mobileNavMenuUniversal" aria-label="Menu de navigation mobile">
+        <a href="/services/" class="mobile-nav-main-link" data-i18n="mobileNav.ourServices">Nos Services</a>
+        <hr>
+        <a href="/services/infogerance/" data-i18n="services.infogerance.titleShort">Infogérance</a>
+        <a href="/services/cybersecurite/" data-i18n="services.cybersecurity.titleShort">Cybersécurité</a>
+        <a href="/services/cloud/" data-i18n="services.cloud.titleShort">Solutions Cloud</a>
+        <a href="/services/reseau/" data-i18n="services.network.titleShort">Réseau</a>
+        <a href="/services/materiel/" data-i18n="services.hardware.titleShort">Matériel</a>
+        <a href="/services/audit/" data-i18n="services.audit.titleShort">Audit & Conseil</a>
+        <hr>
+        <a href="/#pourquoi-atelier-express-pro" data-i18n="mobileNav.whyUs">Pourquoi Nous ?</a>
+        <a href="/actualites/" data-i18n="mobileNav.news">Actualités</a>
+        <a href="/a-propos/" data-i18n="mobileNav.aboutUs">À Propos</a>
+        <a href="/partenariat/" data-i18n="mobileNav.partnership">Partenariat</a>
+        <a href="/contact/" data-i18n="mobileNav.contact">Contact</a>
+        <hr>
+        <a href="/questionnaire.html" class="btn btn-accent-custom mobile-nav-btn" data-i18n="mobileNav.quoteSimulator">Simulateur Devis Complet</a>
+        <a href="/support-urgent.html" class="btn btn-secondary-custom mobile-nav-btn" data-i18n="mobileNav.urgentSupport">Support Urgent</a>
+    </nav>
+</header>
+<nav class="services-navigation-bar" aria-label="Navigation des services principaux">
+    <div class="container services-nav-container">
+        <ul>
+            <li><a href="/services/infogerance/"><i class="fas fa-cogs" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.infogerance.titleShort">Infogérance</span></a></li>
+            <li><a href="/services/cybersecurite/"><i class="fas fa-shield-virus" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.cybersecurity.titleShort">Cybersécurité</span></a></li>
+            <li><a href="/services/cloud/"><i class="fas fa-cloud" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.cloud.titleShort">Solutions Cloud</span></a></li>
+            <li><a href="/services/reseau/"><i class="fas fa-network-wired" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.network.titleShort">Réseau</span></a></li>
+            <li><a href="/services/materiel/"><i class="fas fa-laptop-code" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.hardware.titleShort">Matériel</span></a></li>
+            <li><a href="/services/audit/"><i class="fas fa-clipboard-check" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.audit.titleShort">Audit & Conseil</span></a></li>
+        </ul>
+    </div>
+</nav>
+
+    <main>
+        <!-- C'est ici que le contenu unique de chaque page sera inséré -->
+        
+<section class="hero-service"> 
+    <div class="container">
+        <div class="breadcrumb-service">
+            <a href="/">Accueil</a> > <a href="/services/">Nos Services</a> > <span class="current-service">Supervision Proactive</span>
+        </div>
+        <h1>Supervision Informatique <span class="highlight-text-service">Proactive 24/7</span></h1>
+        <p class="hero-subtitle-service">Gardez une longueur d'avance sur les incidents. Notre service de supervision et monitoring IT détecte et alerte sur les anomalies avant qu'elles n'impactent votre PME.</p>
+        <a href="/contact/?sujet=DemandeSupervisionIT" class="btn btn-accent-custom btn-large">Découvrir notre Supervision</a>
+    </div>
+</section>
+
+<section id="supervision-introduction" class="service-content-section"> 
+    <div class="container">
+        <div class="service-content-grid alternate-layout"> 
+             <div class="service-image-content">
+                <img src="/img/supervision-proactive-atelier-express-pro.jpg" alt="Tableau de bord de supervision informatique - Atelier Express Pro" loading="lazy">
+            </div>
+            <div class="service-text-content">
+                <h2 class="section-title-left-custom">Anticipez les Pannes, <span class="highlight-text">Maximisez la Disponibilité</span></h2>
+                <p>Dans un monde où chaque minute d'indisponibilité coûte cher, la supervision proactive de votre système d'information n'est plus un luxe, mais une nécessité. Le service de monitoring 24/7 de Atelier Express Pro surveille en continu l'état de santé de vos serveurs, réseaux, applications et postes de travail.</p>
+                <p>Grâce à des alertes intelligentes et à l'analyse prédictive, nous identifions les signes avant-coureurs de pannes ou de dégradations de performance, nous permettant d'intervenir souvent avant même que vous ne constatiez un problème.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="supervision-elements" class="service-content-section section-bg-light">
+    <div class="container">
+        <h2 class="section-title-custom">Ce que Nous <span class="highlight-text">Supervisons pour Vous</span></h2>
+        <p class="section-subtitle-custom">Notre solution de monitoring couvre l'ensemble des composants critiques de votre infrastructure IT.</p>
+        
+        <div class="offers-grid supervision-elements-grid"> 
+            <div class="offer-card supervision-element-card"> 
+                <div class="offer-icon"><i class="fas fa-server"></i></div>
+                <h3>Serveurs & Stockage</h3>
+                <p class="offer-description">Surveillance de l'état CPU, RAM, disques, services critiques, sauvegardes, température.</p>
+            </div>
+            <div class="offer-card supervision-element-card">
+                <div class="offer-icon"><i class="fas fa-network-wired"></i></div>
+                <h3>Réseau & Connectivité</h3>
+                <p class="offer-description">Monitoring des routeurs, switchs, pare-feu, liens Internet, latence, disponibilité des VPN.</p>
+            </div>
+            <div class="offer-card supervision-element-card">
+                <div class="offer-icon"><i class="fas fa-laptop-code"></i></div>
+                <h3>Postes de Travail</h3>
+                <p class="offer-description">Suivi de l'état des disques, mémoire, antivirus, mises à jour critiques (optionnel).</p>
+            </div>
+            <div class="offer-card supervision-element-card">
+                <div class="offer-icon"><i class="fas fa-cubes"></i></div>
+                <h3>Applications Métiers</h3>
+                <p class="offer-description">Vérification de la disponibilité et de la réactivité de vos applications critiques (ERP, CRM, etc.).</p>
+            </div>
+             <div class="offer-card supervision-element-card">
+                <div class="offer-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Sécurité</h3>
+                <p class="offer-description">Alertes sur les tentatives d'intrusion, activités suspectes, mises à jour de sécurité manquantes.</p>
+            </div>
+             <div class="offer-card supervision-element-card">
+                <div class="offer-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Services Cloud</h3>
+                <p class="offer-description">Surveillance de la disponibilité et de la performance de vos services hébergés (Microsoft 365, Azure, AWS).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ... (Colle ici les autres sections comme les Bénéfices, etc.) ... -->
+
+<section id="faq-supervision-section" class="service-content-section section-bg-light"> 
+    <div class="container">
+        <h2 class="section-title-custom faq-title">Questions Fréquentes sur la <span class="highlight-text">Supervision IT</span></h2> 
+        <dl class="faq-service"> 
+            <!-- ... (Contenu de la FAQ) ... -->
+        </dl>
+    </div>
+</section>
+
+<section class="service-content-section related-services-section"> 
+    <div class="container">
+        <h2 class="section-title-custom">Combinez la Supervision avec <span class="highlight-text">Nos Autres Services</span></h2>
+        <p class="section-subtitle-custom">La supervision proactive est un complément idéal à nos offres d'infogérance et de cybersécurité.</p>
+        <div class="related-services-grid">
+            <a href="/services/infogerance/" class="related-service-card">
+                <i class="fas fa-cogs"></i>
+                <h4>Infogérance Complète</h4>
+                <p>Intégrez la supervision à un contrat de maintenance global.</p>
+            </a>
+            <a href="/services/cybersecurite/" class="related-service-card">
+                <i class="fas fa-shield-virus"></i>
+                <h4>Cybersécurité</h4>
+                <p>Détectez les incidents de sécurité grâce au monitoring continu.</p>
+            </a>
+             <a href="/services/audit/" class="related-service-card">
+                <i class="fas fa-clipboard-check"></i>
+                <h4>Audit & Conseil IT</h4>
+                <p>Utilisez les données de supervision pour affiner votre stratégie IT.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-service dt');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.nextElementSibling;
+            const isExpanded = item.getAttribute('aria-expanded') === 'true';
+
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.setAttribute('aria-expanded', 'false');
+                    otherItem.nextElementSibling.hidden = true;
+                }
+            });
+
+            item.setAttribute('aria-expanded', !isExpanded);
+            answer.hidden = isExpanded;
+        });
+        if (item.getAttribute('aria-expanded') !== 'true') {
+            item.nextElementSibling.hidden = true;
+        }
+    });
+});
+</script>
+    </main>
+
+    <!-- Fichier : src/_includes/footer.njk -->
+
+<footer class="site-footer-atelier-express-pro">
+    <div class="container footer-grid-atelier-express-pro">
+        <div class="footer-col footer-col-about">
+            <a href="/" title="Accueil Atelier Express Pro - Solutions IT pour PME">
+                <img src="/img/atelier-express-pro-logo-principal-blanc.png" alt="Atelier Express Pro Logo Blanc - Solutions IT pour PME" class="footer-logo-img" loading="lazy">
+            </a>
+            <p data-i18n="footer.about.description">Atelier Express Pro, votre partenaire informatique de confiance. Nous aidons les PME à exploiter le plein potentiel de la technologie.</p>
+            <div class="social-media-links">
+                <a href="#" aria-label="LinkedIn Atelier Express Pro" title="LinkedIn Atelier Express Pro"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook Atelier Express Pro" title="Facebook Atelier Express Pro"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Twitter Atelier Express Pro" title="Twitter Atelier Express Pro"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer.explore.title">Explorer</h4>
+            <ul>
+                <li><a href="/" data-i18n="footer.explore.home">Accueil</a></li>
+                <li><a href="/#prestations-atelier-express-pro" data-i18n="footer.explore.services">Nos Prestations</a></li>
+                <li><a href="/#pourquoi-atelier-express-pro" data-i18n="footer.explore.whyUs">Pourquoi Nous ?</a></li>
+                <li><a href="/a-propos/" data-i18n="footer.explore.aboutUs">Qui sommes-nous ?</a></li>
+                <li><a href="/questionnaire.html" data-i18n="footer.explore.quoteSimulator">Simulateur de Devis</a></li>
+                <li><a href="/actualites/" data-i18n="footer.explore.newsBlog">Actualités & Blog</a></li>
+                <li><a href="/partenariat/" data-i18n="footer.explore.partnership">Devenir Partenaire</a></li>
+                <li><a href="/contact/" data-i18n="footer.explore.contact">Contact</a></li>
+            </ul>
+        </div>
+         <div class="footer-col">
+            <h4 data-i18n="footer.keyServices.title">Services Clés</h4>
+            <ul>
+                <li><a href="/services/infogerance/" data-i18n="services.infogerance.title">Infogérance & Maintenance</a></li>
+                <li><a href="/services/cybersecurite/" data-i18n="services.cybersecurity.title">Cybersécurité & Sauvegarde</a></li>
+                <li><a href="/services/cloud/" data-i18n="services.cloud.title">Solutions Cloud</a></li>
+                <li><a href="/services/reseau/" data-i18n="services.network.title">Réseau & Infrastructure</a></li>
+                <li><a href="/services/audit/" data-i18n="services.audit.title">Audit & Conseil</a></li>
+                <li><a href="/services/materiel/" data-i18n="services.hardware.title">Matériel Informatique</a></li>
+                <li><a href="/services/supervision/" data-i18n="services.supervision.title">Supervision Proactive</a></li>
+            </ul>
+        </div>
+        <div class="footer-col footer-col-contact">
+            <h4 data-i18n="footer.contactUs.title">Nous Contacter</h4>
+            <address>
+                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>123 Avenue de la Tech<br>75000 Paris, France</span></p>
+                <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+33412345678">04 12 34 56 78</a></p>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:contact@atelierexpresspro.fr">contact@atelierexpresspro.fr</a></p>
+            </address>
+        </div>
+    </div>
+    <div class="footer-bottom-atelier-express-pro">
+        <p>© <span class="current-year-atelier-express-pro"></span> <span data-i18n="footer.copyrightText">Atelier Express Pro SAS. Tous droits réservés.</span> | <a href="/mentions-legales/">Mentions Légales</a> | <a href="/politique-confidentialite/">Confidentialité</a></p>
+    </div>
+</footer>
+    <a href="/support-urgent.html" class="floating-help-btn-atelier-express-pro" aria-label="Contacter le support urgent">
+        <i class="fas fa-headset" aria-hidden="true"></i>
+    </a>
+    <!-- Script commun pour le menu mobile et l'année -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Logique du menu mobile
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle-custom');
+            const mobileNavMenu = document.getElementById('mobileNavMenuUniversal');
+            if (mobileMenuToggle && mobileNavMenu) {
+                const iconOpen = mobileMenuToggle.querySelector('.icon-open');
+                const iconClose = mobileMenuToggle.querySelector('.icon-close');
+                mobileMenuToggle.addEventListener('click', function () {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mobileNavMenu.classList.toggle('active');
+                    if (iconOpen && iconClose) {
+                        iconOpen.style.display = isExpanded ? 'inline' : 'none';
+                        iconClose.style.display = isExpanded ? 'none' : 'inline';
+                    }
+                });
+            }
+            // Logique pour l'année du footer
+            const yearSpan = document.querySelector('.current-year-atelier-express-pro');
+            if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+        });
+    </script>
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</body>
+</html>

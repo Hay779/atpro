@@ -1,0 +1,84 @@
+---
+layout: "base.njk"
+title: "Audit Informatique & Conseil IT Stratégique pour PME | Atelier Express Pro"
+description: "Atelier Express Pro réalise des audits IT complets pour évaluer votre système d'information, identifier les risques et opportunités, et vous fournir des conseils stratégiques."
+---
+
+<section class="hero-service"> 
+    <div class="container">
+        <div class="breadcrumb-service">
+            <a href="/">Accueil</a> > <a href="/services/">Nos Services</a> > <span class="current-service">Audit & Conseil IT</span>
+        </div>
+        <h1>Audit Informatique & <span class="highlight-text-service">Conseil Stratégique</span></h1>
+        <p class="hero-subtitle-service">Prenez des décisions éclairées pour votre système d'information grâce à un audit IT complet et des recommandations personnalisées par les experts Atelier Express Pro.</p>
+        <a href="/contact/?sujet=DemandeAuditIT" class="btn btn-accent-custom btn-large">Demander Votre Audit IT</a>
+    </div>
+</section>
+
+<section id="audit-introduction" class="service-content-section"> 
+    <div class="container">
+        <div class="audit-intro-grid">
+            <div class="audit-intro-why">
+                <h2 class="section-title-left-custom">Pourquoi Réaliser un <span class="highlight-text">Audit Informatique</span> ?</h2>
+                <p>Un audit IT est un diagnostic approfondi de votre infrastructure, de vos applications, de votre sécurité et de vos processus. Il vous permet d'identifier les forces, les faiblesses, les risques potentiels et les opportunités d'optimisation pour aligner votre informatique sur vos objectifs métiers.</p>
+            </div>
+            <div class="audit-intro-benefits">
+                <h3 style="font-size: 1.25rem; color: var(--custom-text-dark-primary); margin-bottom: 1em;">Un Audit Atelier Express Pro Vous Apporte :</h3>
+                <ul class="custom-list-style"> 
+                    <li><i class="fas fa-search-location"></i> Une vision claire et objective de l'état de votre SI.</li>
+                    <li><i class="fas fa-shield-alt"></i> L'identification des vulnérabilités de sécurité et des risques.</li>
+                    <li><i class="fas fa-chart-line"></i> Des pistes concrètes pour améliorer la performance et la fiabilité.</li>
+                    <li><i class="fas fa-euro-sign"></i> Des recommandations pour optimiser vos coûts informatiques.</li>
+                    <li><i class="fas fa-road"></i> Une feuille de route stratégique pour l'évolution de votre IT.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 40px;">
+             <a href="/contact/?sujet=PlanifierAudit" class="btn btn-primary-custom btn-large">Planifier un échange sur votre audit</a>
+        </div>
+    </div>
+</section>
+
+<!-- Colle ici les autres sections de ta page d'audit... -->
+<!-- Comme "Notre Méthodologie d'Audit", "Au-delà de la Sécurité", etc. -->
+
+<section id="faq-audit-section" class="service-content-section section-bg-light"> 
+    <div class="container">
+        <h2 class="section-title-custom faq-title">Questions Fréquentes sur l'<span class="highlight-text">Audit & le Conseil IT</span></h2> 
+        <dl class="faq-service"> 
+            <!-- ... (contenu de la FAQ) ... -->
+        </dl>
+    </div>
+</section>
+
+<!-- ... (autres sections) ... -->
+
+
+{# Le script spécifique à cette page pour la FAQ #}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const faqItems = document.querySelectorAll('.faq-service dt');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.nextElementSibling;
+            const isExpanded = item.getAttribute('aria-expanded') === 'true';
+
+            // Ferme les autres réponses (comportement accordéon)
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.setAttribute('aria-expanded', 'false');
+                    otherItem.nextElementSibling.hidden = true;
+                }
+            });
+
+            // Ouvre/ferme la réponse cliquée
+            item.setAttribute('aria-expanded', !isExpanded);
+            answer.hidden = isExpanded;
+        });
+        // Cache initialement les réponses non dépliées
+        if (item.getAttribute('aria-expanded') !== 'true') {
+            item.nextElementSibling.hidden = true;
+        }
+    });
+});
+</script>

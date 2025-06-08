@@ -3120,4 +3120,203 @@ main.questionnaire-main-content {
     border: 1px solid var(--custom-border-light); /* Peut-être une bordure un peu plus visible */
 }
 
-/* ... autres styles ... */
+/* ==========================================================================
+   STYLES SPÉCIFIQUES POUR LES PAGES DE SERVICE
+   ========================================================================== */
+
+/* --- STYLES UNIQUES POUR LES OFFRES D'INFOGÉRANCE --- */
+
+/* La grille spécifique à l'infogérance */
+.infogerance-offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Les cartes d'offres à l'intérieur de la grille infogérance */
+.infogerance-offer-grid .offer-card {
+    background-color: var(--site-bg-white);
+    padding: 28px;
+    border-radius: var(--custom-border-radius-cards);
+    box-shadow: var(--custom-box-shadow-soft);
+    border: 1px solid var(--custom-border-light);
+    display: flex;
+    flex-direction: column;
+    transition: var(--custom-transition);
+}
+
+.infogerance-offer-grid .offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--custom-box-shadow-soft-hover);
+}
+
+.infogerance-offer-grid .offer-card.popular {
+    border: 2px solid var(--site-primary-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+.infogerance-offer-grid .offer-card.popular::before {
+    content: 'Recommandé';
+    position: absolute;
+    top: 15px;
+    right: -35px;
+    background: var(--site-primary-blue);
+    color: var(--site-text-light);
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.infogerance-offer-grid .offer-icon {
+    font-size: 2.2rem;
+    color: var(--site-primary-blue);
+    margin-bottom: 15px;
+}
+
+.infogerance-offer-grid .offer-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.infogerance-offer-grid .offer-description {
+    color: var(--site-text-medium);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.infogerance-offer-grid .offer-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.infogerance-offer-grid .offer-card ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.infogerance-offer-grid .offer-card ul li i {
+    margin-right: 10px;
+    margin-top: 5px;
+    color: var(--site-success-color);
+}
+
+.infogerance-offer-grid .offer-card ul li.not-included {
+    color: #999;
+    opacity: 0.7;
+}
+
+.infogerance-offer-grid .offer-card ul li.not-included i {
+    color: #ccc;
+}
+
+.infogerance-offer-grid .offer-card .btn {
+    margin-top: auto;
+}
+
+.infogerance-offer-grid .offer-details-summary {
+    font-size: 0.8rem;
+    color: var(--site-text-medium);
+    margin-top: 15px;
+    border-top: 1px solid var(--custom-border-subtle-lavender);
+    padding-top: 15px;
+}
+.infogerance-offer-grid .offer-details-summary p { margin-bottom: 5px; }
+
+.infogerance-offer-grid .offer-comparison-note {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: var(--site-text-medium);
+}
+
+
+/* --- STYLES COMMUNS (Grille des bénéfices, FAQ, etc.) --- */
+
+/* Grille des bénéfices (Why Choose Grid) */
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.why-choose-card {
+    background-color: var(--custom-bg-white);
+    padding: 25px;
+    border-radius: var(--custom-border-radius-cards);
+    text-align: center;
+    border: 1px solid var(--custom-border-subtle-lavender);
+}
+
+.section-bg-light .why-choose-card {
+    background-color: var(--custom-bg-white);
+}
+
+.why-choose-icon i {
+    font-size: 2rem;
+    color: var(--site-primary-blue);
+    margin-bottom: 15px;
+}
+
+.why-choose-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.why-choose-card p {
+    font-size: 0.9rem;
+    color: var(--site-text-medium);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* FAQ (Foire Aux Questions) */
+.faq-service {
+    max-width: 800px;
+    margin: 30px auto 0 auto;
+    border-top: 1px solid var(--custom-border-light);
+}
+
+.faq-service dt {
+    font-weight: 600;
+    padding: 18px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--custom-border-light);
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.faq-service dt:hover {
+    background-color: #f0f2f5;
+}
+
+.faq-service dt::after {
+    content: '\f078'; /* Icône FontAwesome pour une flèche vers le bas */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.faq-service dt[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-service dd {
+    padding: 20px;
+    background-color: var(--custom-bg-white);
+    border-bottom: 1px solid var(--custom-border-light);
+}
+
+.faq-service dd p:last-child {
+    margin-bottom: 0;
+}
