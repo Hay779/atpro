@@ -1,4 +1,4 @@
-<!-- Fichier : src/_includes/base.njk -->
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -12,73 +12,8 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- Fichier : src/_includes/header.njk -->
 
-<header class="site-header-custom">
-    <div class="container header-custom-container">
-        <div class="logo-atelier-express-pro-custom">
-            <a href="/" title="Accueil Atelier Express Pro - Solutions IT pour PME">
-                <picture>
-                    <source media="(max-width:850px)" srcset="/img/logoP.png">
-                    <img src="/img/LogoAtelierExpressPro.png" alt="Logo Atelier Express Pro - Solutions IT pour PME"
-                         onerror="this.style.display='none'; this.onerror=null; document.getElementById('logoTextFallbackHeader').style.display='block';"
-                         loading="eager">
-                </picture>
-                <span id="logoTextFallbackHeader" class="logo-text-fallback" style="display:none;">ATELIER EXPRESS PRO</span>
-            </a>
-        </div>
-        <nav class="main-nav-custom" aria-label="Navigation principale de bureau">
-            <!-- Liens de navigation principale desktop (si ajoutés) -->
-        </nav>
-
-        <div class="header-actions-combined">
-            <a href="tel:+33412345678" class="phone-link-header">
-                <i class="fas fa-phone-alt" aria-hidden="true"></i> 
-                <span class="phone-text-header">04 12 34 56 78</span>
-            </a>
-            <a href="/questionnaire.html" class="btn btn-primary-custom cta-header-main" data-i18n="nav.startQuote">Commencer votre devis</a>
-            
-            <button class="mobile-menu-toggle-custom" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNavMenuUniversal">
-                <i class="fas fa-bars icon-open" aria-hidden="true"></i>
-                <i class="fas fa-times icon-close" aria-hidden="true" style="display: none;"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- Menu Mobile -->
-    <nav class="mobile-nav-custom" id="mobileNavMenuUniversal" aria-label="Menu de navigation mobile">
-        <a href="/#prestations-atelier-express-pro" class="mobile-nav-main-link" data-i18n="mobileNav.ourServices">Nos Services</a>
-        <hr>
-        <a href="/services/infogerance.html" data-i18n="services.infogerance.titleShort">Infogérance</a>
-        <a href="/services/cybersecurite.html" data-i18n="services.cybersecurity.titleShort">Cybersécurité</a>
-        <a href="/services/cloud.html" data-i18n="services.cloud.titleShort">Solutions Cloud</a>
-        <a href="/services/reseau.html" data-i18n="services.network.titleShort">Réseau</a>
-        <a href="/services/materiel.html" data-i18n="services.hardware.titleShort">Matériel</a>
-        <a href="/services/audit.html" data-i18n="services.audit.titleShort">Audit & Conseil</a>
-        <hr>
-        <a href="/#pourquoi-atelier-express-pro" data-i18n="mobileNav.whyUs">Pourquoi Nous ?</a>
-        <a href="/actualites/" data-i18n="mobileNav.news">Actualités</a>
-        <a href="/a-propos/" data-i18n="mobileNav.aboutUs">À Propos</a>
-        <a href="/partenariat/" data-i18n="mobileNav.partnership">Partenariat</a>
-        <a href="/contact/" data-i18n="mobileNav.contact">Contact</a>
-        <hr>
-        <a href="/questionnaire.html" class="btn btn-accent-custom mobile-nav-btn" data-i18n="mobileNav.quoteSimulator">Simulateur Devis Complet</a>
-        <a href="/support-urgent.html" class="btn btn-secondary-custom mobile-nav-btn" data-i18n="mobileNav.urgentSupport">Support Urgent</a>
-    </nav>
-</header>
-<nav class="services-navigation-bar" aria-label="Navigation des services principaux">
-    <div class="container services-nav-container">
-        <ul>
-            <li><a href="/services/infogerance.html"><i class="fas fa-cogs" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.infogerance.titleShort">Infogérance</span></a></li>
-            <li><a href="/services/cybersecurite.html"><i class="fas fa-shield-virus" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.cybersecurity.titleShort">Cybersécurité</span></a></li>
-            <li><a href="/services/cloud.html"><i class="fas fa-cloud" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.cloud.titleShort">Solutions Cloud</span></a></li>
-            <li><a href="/services/reseau.html"><i class="fas fa-network-wired" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.network.titleShort">Réseau</span></a></li>
-            <li><a href="/services/materiel.html"><i class="fas fa-laptop-code" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.hardware.titleShort">Matériel</span></a></li>
-            <li><a href="/services/audit.html"><i class="fas fa-clipboard-check" aria-hidden="true"></i> <span class="service-nav-text" data-i18n="services.audit.titleShort">Audit & Conseil</span></a></li>
-        </ul>
-    </div>
-</nav>
-
+   
     <main>
         <!-- C'est ici que le contenu unique de chaque page sera inséré -->
         
@@ -269,31 +204,19 @@ document.addEventListener('DOMContentLoaded', function () {
         <p>© <span class="current-year-atelier-express-pro"></span> <span data-i18n="footer.copyrightText">Atelier Express Pro SAS. Tous droits réservés.</span> | <a href="/mentions-legales.html" data-i18n="footer.legalNotices">Mentions Légales</a> | <a href="/politique-confidentialite.html" data-i18n="footer.privacyPolicy">Confidentialité</a></p>
     </div>
 </footer>
+
     <a href="/support-urgent.html" class="floating-help-btn-atelier-express-pro" aria-label="Contacter le support urgent">
         <i class="fas fa-headset" aria-hidden="true"></i>
     </a>
-    <!-- Script commun pour le menu mobile et l'année -->
+    
+    <!-- Script commun pour l'année du footer. Le script du menu mobile n'est pas nécessaire ici car il n'y a pas de header/menu mobile. -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Logique du menu mobile
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle-custom');
-            const mobileNavMenu = document.getElementById('mobileNavMenuUniversal');
-            if (mobileMenuToggle && mobileNavMenu) {
-                const iconOpen = mobileMenuToggle.querySelector('.icon-open');
-                const iconClose = mobileMenuToggle.querySelector('.icon-close');
-                mobileMenuToggle.addEventListener('click', function () {
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    mobileNavMenu.classList.toggle('active');
-                    if (iconOpen && iconClose) {
-                        iconOpen.style.display = isExpanded ? 'inline' : 'none';
-                        iconClose.style.display = isExpanded ? 'none' : 'inline';
-                    }
-                });
-            }
             // Logique pour l'année du footer
             const yearSpan = document.querySelector('.current-year-atelier-express-pro');
-            if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+            if (yearSpan) { 
+                yearSpan.textContent = new Date().getFullYear(); 
+            }
         });
     </script>
 </body>

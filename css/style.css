@@ -432,7 +432,7 @@ p {
 .hero-main-v2 { margin-top: 20px; }
 
 .hero-main-v2-background {
-    background-image: url('img/hero-main-background.png'); 
+    background-image: url('/img/hero-main-background.png'); 
     background-color: var(--custom-primary-dark); 
     background-size: cover; background-position: center center;
     padding: 100px 0; position: relative;

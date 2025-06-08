@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="icon" href="/img/LogoAtelierExpressPro.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+   
+    <main>
+        <!-- C'est ici que le contenu unique de chaque page sera inséré -->
+        {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+
+    <a href="/support-urgent.html" class="floating-help-btn-atelier-express-pro" aria-label="Contacter le support urgent">
+        <i class="fas fa-headset" aria-hidden="true"></i>
+    </a>
+    
+    <!-- Script commun pour l'année du footer. Le script du menu mobile n'est pas nécessaire ici car il n'y a pas de header/menu mobile. -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Logique pour l'année du footer
+            const yearSpan = document.querySelector('.current-year-atelier-express-pro');
+            if (yearSpan) { 
+                yearSpan.textContent = new Date().getFullYear(); 
+            }
+        });
+    </script>
+</body>
+</html>

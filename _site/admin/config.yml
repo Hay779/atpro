@@ -1,0 +1,56 @@
+# Fichier : src/admin/config.yml
+
+backend:
+  name: git-gateway
+  branch: main # La branche sur laquelle les modifications seront enregistrées
+
+# Ceci est nécessaire pour que les images s'affichent correctement dans l'interface
+media_folder: "src/img/uploads" # Où stocker les nouvelles images uploadées via le CMS
+public_folder: "/img/uploads"
+
+# On définit ici les "collections" de contenu que l'on peut éditer.
+# On utilise une "collection de fichiers" car tu as des pages uniques.
+collections:
+  - name: "pages" # Un nom interne pour cette collection
+    label: "Pages du site" # Ce qui s'affichera dans l'interface du CMS
+    files:
+      # --- Définition pour la page d'accueil ---
+      - file: "src/index.njk"
+        label: "Page d'Accueil"
+        name: "accueil"
+        fields:
+          - { label: "Titre (pour le SEO)", name: "title", widget: "string" }
+          - { label: "Description (pour le SEO)", name: "description", widget: "string" }
+          - { label: "Contenu de la page", name: "body", widget: "markdown" }
+      
+      # --- Définition pour la page "À Propos" ---
+      - file: "src/a-propos.njk" # Le chemin vers le fichier à éditer
+        label: "Page 'À Propos'" # Le nom dans l'interface
+        name: "a-propos" # Un nom technique
+        fields: # La liste des champs éditables pour cette page
+          - { label: "Titre de la page (pour le SEO)", name: "title", widget: "string" }
+          - { label: "Description de la page (pour le SEO)", name: "description", widget: "string" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+
+      # --- Définition pour la page "Contact" ---
+      - file: "src/contact.njk"
+        label: "Page de Contact"
+        name: "contact"
+        fields:
+          - { label: "Titre de la page", name: "title", widget: "string" }
+          - { label: "Description de la page", name: "description", widget: "string" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+
+      # --- Définition pour les Mentions Légales ---
+      - file: "src/mentions-legales.njk"
+        label: "Mentions Légales"
+        name: "mentions-legales"
+        fields:
+          - { label: "Titre", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Contenu", name: "body", widget: "markdown" }
+
+      # --- À FAIRE : Ajoute ici les autres pages de la même manière ---
+      # - file: "src/politique-confidentialite.njk"
+      #   label: "Politique de Confidentialité"
+      #   ...

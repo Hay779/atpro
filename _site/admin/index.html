@@ -4,9 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Administration du Contenu - Atelier Express Pro</title>
-  <!-- Script qui charge Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <!-- On ajoute un lien vers le fichier de configuration -->
+  <link rel="stylesheet" href="config.yml">
 </head>
 <body>
+  <!-- On va charger le script à la fin du body pour être sûr que le body existe bien -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
