@@ -1,16 +1,22 @@
 // Fichier : .eleventy.js
+
 module.exports = function(eleventyConfig) {
-  // Indique à Eleventy de copier les dossiers css, js, et img
-  // dans le site final.
+  // Copie des assets statiques
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("img");
-  
+  eleventyConfig.addPassthroughCopy("services");
+
+  // === LA LIGNE À AJOUTER EST ICI ===
+  // On dit à Eleventy de copier le dossier "admin" qui contient
+  // index.html et config.yml.
+  eleventyConfig.addPassthroughCopy("src/admin");
+
   return {
     dir: {
-      input: "src",      // Les fichiers sources sont dans un dossier "src"
-      output: "_site",   // Le site final sera généré dans "_site"
-      includes: "_includes" // Les morceaux réutilisables sont dans "src/_includes"
+      input: "src",
+      output: "_site",
+      includes: "_includes"
     }
   };
 };
