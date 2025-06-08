@@ -1,6 +1,7 @@
 {
   "name": "v14-atpro",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
@@ -8,17 +9,21 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node": ">=18.0.0" 
+    "node": ">=18.0.0"
   },
-  "repository": { ... },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hay779/atpro.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": { ... },
-  "homepage": "...",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/Hay779/atpro/issues"
+  },
+  "homepage": "https://github.com/Hay779/atpro#readme",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.1" 
+    "@11ty/eleventy": "^3.1.1"
   },
   "devDependencies": {}
 }
