@@ -1,0 +1,407 @@
+---
+layout: "base.njk"
+title: "Atelier Express Pro - Solutions IT pour PME, Infogérance & Cybersécurité"
+description: "Atelier Express Pro : votre expert en solutions IT pour PME. Infogérance, cybersécurité, cloud, audit et matériel informatique. Obtenez un devis personnalisé et optimisez votre performance."
+---
+
+{# Le contenu unique de la page d'accueil commence ici #}
+
+<section class="hero-main-v2">
+    <div class="hero-main-v2-background">
+        <div class="hero-main-v2-overlay"></div>
+        <div class="container hero-main-v2-content">
+           <div class="hero-text-container">
+            <h1 data-i18n="hero.title">Votre Informatique, Notre Expertise.</h1>
+            <p data-i18n="hero.subtitle">Des solutions IT complètes pour TPE/PME, du devis personnalisé au support urgent. Nous sommes là pour vous accompagner.</p>
+         </div> 
+    </div>
+    </div>
+    <div class="hero-main-v2-actions-wrapper">
+        <div class="container">
+            <div class="hero-primary-actions-grid-v3">
+                <a href="/questionnaire.html" class="hero-action-card-v3 hero-action-card-v2-style btn-icon-text-bar">
+                    <span class="btn-icon-wrapper">
+                        <img src="/img/icon-simulateur-devis.svg" alt="Icône Simulateur de Devis" class="hero-card-custom-icon"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML = '<i class=\'fas fa-file-signature\' aria-hidden=\'true\'></i>';">
+                    </span>
+                    <span class="btn-separator-element"></span>
+                    <span class="btn-text-wrapper">
+                        <h3 data-i18n="hero.actions.quoteSimulator.title">Simulateur de Devis</h3>
+                        <p data-i18n="hero.actions.quoteSimulator.description">Évaluez vos besoins et obtenez une estimation sur mesure.</p>
+                    </span>
+                </a>
+               <a href="/support-urgent.html" class="hero-action-card-v3 hero-action-card-v2-style btn-icon-text-bar">
+                    <span class="btn-icon-wrapper">
+                        <img src="/img/icon-support-urgent.svg" alt="Icône Support Urgent" class="hero-card-custom-icon"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML = '<i class=\'fas fa-life-ring\' aria-hidden=\'true\'></i>';">
+                    </span>
+                    <span class="btn-separator-element"></span>
+                    <span class="btn-text-wrapper">
+                        <h3 data-i18n="hero.actions.urgentSupport.title">Support Urgent</h3>
+                        <p data-i18n="hero.actions.urgentSupport.description">Une panne ? Notre équipe d'astreinte est là pour vous aider.</p>
+                    </span>
+                </a>
+                <a href="/contact.html" class="hero-action-card-v3 hero-action-card-v2-style btn-icon-text-bar">
+                    <span class="btn-icon-wrapper">
+                         <img src="/img/icon-prendre-contact.svg" alt="Icône Prendre Contact" class="hero-card-custom-icon"
+                              onerror="this.style.display='none'; this.parentElement.innerHTML = '<i class=\'fas fa-comments\' aria-hidden=\'true\'></i>';">
+                    </span>
+                    <span class="btn-separator-element"></span>
+                    <span class="btn-text-wrapper">
+                        <h3 data-i18n="hero.actions.getInTouch.title">Prendre Contact</h3>
+                        <p data-i18n="hero.actions.getInTouch.description">Discutons de votre projet et de vos ambitions avec nos experts.</p>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="diagnostic-it-inline" class="section-padding section-bg-light">
+    <div class="container">
+        <div class="devis-intro-header">
+            <h2><span data-i18n="diagnostic.titlePart1">Votre</span> <span class="highlight-text" data-i18n="diagnostic.titleHighlight">devis</span></h2>
+            <p class="subtitle-devis" data-i18n="diagnostic.subtitle">en quelques étapes simples</p>
+        </div>
+        <div class="progress-bar-container step-1">
+            <div class="progress-stage active">
+                <div class="progress-dot"></div>
+                <div class="progress-label" data-i18n="diagnostic.progress.step1">Votre Besoin</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-stage">
+                <div class="progress-dot"></div>
+                <div class="progress-label" data-i18n="diagnostic.progress.step2">Détails</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-stage">
+                <div class="progress-dot"></div>
+                <div class="progress-label" data-i18n="diagnostic.progress.step3">Estimation</div>
+            </div>
+        </div>
+        <h3 class="devis-question" data-i18n="diagnostic.mainQuestion">Quel est votre besoin principal aujourd'hui ?</h3>
+        <div class="devis-options-grid devis-options-grid-icons">
+            <a href="/questionnaire.html?type=parc" class="devis-option-card icon-card">
+                <div class="devis-option-icon-wrapper">
+                    <img src="/img/icon-parc-informatique.png" alt="Icône Parc Informatique Atelier Express Pro" loading="lazy" onerror="this.style.display='none'; this.src='https://via.placeholder.com/100x100/F9F8FF/2F1A4B?text=Parc';">
+                </div>
+                <div class="devis-option-label">
+                    <span data-i18n="diagnostic.options.itAssets">Parc informatique</span>
+                    <span class="arrow-icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+            </a>
+            <a href="/questionnaire.html?type=reseau" class="devis-option-card icon-card">
+                <div class="devis-option-icon-wrapper">
+                    <img src="/img/icon-reseau-infrastructure.png" alt="Icône Réseau et Infrastructure Atelier Express Pro" loading="lazy" onerror="this.style.display='none'; this.src='https://via.placeholder.com/100x100/F9F8FF/2F1A4B?text=Réseau';">
+                </div>
+                <div class="devis-option-label">
+                    <span data-i18n="diagnostic.options.networkInfrastructure">Réseau & infrastructure</span>
+                    <span class="arrow-icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+            </a>
+            <a href="/questionnaire.html?type=cybersecurite" class="devis-option-card icon-card">
+                <div class="devis-option-icon-wrapper">
+                    <img src="/img/icon-cloud-securite.png" alt="Icône Données et Cybersécurité Atelier Express Pro" loading="lazy" onerror="this.style.display='none'; this.src='https://via.placeholder.com/100x100/F9F8FF/2F1A4B?text=Secu';">
+                </div>
+                <div class="devis-option-label">
+                    <span data-i18n="diagnostic.options.dataCybersecurity">Données & cybersécurité</span>
+                    <span class="arrow-icon"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="prestations-atelier-express-pro" class="section-padding section-prestations-custom">
+     <div class="container">
+        <h2 class="section-title-custom" data-i18n="expertisePoles.title">Découvrez nos Pôles d'Expertise</h2>
+         <p class="section-subtitle-custom" data-i18n="expertisePoles.subtitle">Des prestations complètes pour une infrastructure IT fiable, sécurisée et performante.</p>
+        <div class="prestations-grid-custom">
+            <a href="/services/infogerance.html" class="prestation-card-custom">
+                <div class="prestation-card-icon-custom"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+                <h3 data-i18n="services.infogerance.title">Infogérance Proactive</h3>
+                <p data-i18n="services.infogerance.description">Gardez une longueur d'avance avec notre maintenance préventive et notre support illimité.</p>
+                <ul data-i18n-list="services.infogerance.benefits">
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.infogerance.benefits.item1">Maintenance préventive 24/7 pour une disponibilité maximale.</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.infogerance.benefits.item2">Support technique illimité et réactif basé en France.</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.infogerance.benefits.item3">Optimisation continue des performances de votre parc.</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.infogerance.benefits.item4">Gestion rigoureuse des mises à jour et des correctifs de sécurité.</span></li>
+                </ul>
+                <span class="learn-more-custom" data-i18n="common.learnMore">En savoir plus <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a href="/services/cybersecurite.html" class="prestation-card-custom">
+                <div class="prestation-card-icon-custom"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                <h3 data-i18n="services.cybersecurity.title">Cybersécurité Avancée</h3>
+                <p data-i18n="services.cybersecurity.description">Protégez vos données et votre réputation avec nos solutions de sécurité multicouches.</p>
+                <ul data-i18n-list="services.cybersecurity.benefits">
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.cybersecurity.benefits.item1">Protection multicouches contre ransomwares, malwares et phishing.</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.cybersecurity.benefits.item2">Sauvegardes automatiques, cryptées et externalisées de vos données.</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.cybersecurity.benefits.item3">Élaboration de Plan de Reprise d'Activité (PRA) sur mesure.</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.cybersecurity.benefits.item4">Accompagnement à la conformité réglementaire (RGPD, etc.).</span></li>
+                </ul>
+                <span class="learn-more-custom" data-i18n="common.learnMore">En savoir plus <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+            <a href="/services/cloud.html" class="prestation-card-custom">
+                <div class="prestation-card-icon-custom"><i class="fas fa-cloud" aria-hidden="true"></i></div>
+                <h3 data-i18n="services.cloud.title">Solutions Cloud Flexibles</h3>
+                <p data-i18n="services.cloud.description">Migrez, gérez et optimisez vos applications et données dans le cloud en toute confiance.</p>
+                <ul data-i18n-list="services.cloud.benefits">
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.cloud.benefits.item1">Migration et gestion de vos services sur des plateformes Cloud leaders (Azure, AWS, OVHcloud).</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.cloud.benefits.item2">Accès sécurisé à vos applications et données partout, à tout moment.</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.cloud.benefits.item3">Déploiement d'outils collaboratifs modernes (ex: Microsoft 365, Google Workspace).</span></li>
+                    <li><i class="fas fa-check" aria-hidden="true"></i> <span data-i18n="services.cloud.benefits.item4">Infrastructure évolutive pour s'adapter à votre croissance et maîtriser vos coûts.</span></li>
+                </ul>
+                <span class="learn-more-custom" data-i18n="common.learnMore">En savoir plus <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </a>
+        </div>
+         <div class="all-services-link-wrapper text-center">
+            <a href="/services/services.html" class="btn btn-primary-custom btn-large all-services-cta" data-i18n="expertisePoles.allServicesButton">Toutes nos prestations <i class="fas fa-th-list" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="audit-informatique" class="section-padding section-bg-light">
+    <div class="container">
+        <span class="eyebrow-text-custom text-center" data-i18n="auditSection.eyebrow">Notre Méthodologie</span>
+        <h2 class="section-title-custom" data-i18n="auditSection.title">L'Audit Informatique Atelier Express Pro : Votre Feuille de Route Stratégique</h2>
+        <p class="section-subtitle-custom" data-i18n="auditSection.subtitle">Un diagnostic complet de votre système d'information pour identifier les forces, les faiblesses et les axes d'amélioration prioritaires.</p>
+        <div class="audit-steps-container">
+            <div class="audit-step">
+                <div class="audit-step-number"><span>01</span></div>
+                <div class="audit-step-icon"><i class="fas fa-search-plus" aria-hidden="true"></i></div>
+                <div class="audit-step-content">
+                    <h3 data-i18n="auditSection.steps.1.title">Analyse & Collecte</h3>
+                    <p data-i18n="auditSection.steps.1.description">Prise de connaissance de votre environnement, de vos objectifs et collecte d'informations sur votre infrastructure.</p>
+                </div>
+            </div>
+            <div class="audit-step-arrow"><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i></div>
+            <div class="audit-step">
+                <div class="audit-step-number"><span>02</span></div>
+                <div class="audit-step-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                <div class="audit-step-content">
+                    <h3 data-i18n="auditSection.steps.2.title">Évaluation & Diagnostic</h3>
+                    <p data-i18n="auditSection.steps.2.description">Analyse des données, identification des points critiques, des risques potentiels et des opportunités d'optimisation.</p>
+                </div>
+            </div>
+            <div class="audit-step-arrow"><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i></div>
+            <div class="audit-step">
+                <div class="audit-step-number"><span>03</span></div>
+                <div class="audit-step-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+                <div class="audit-step-content">
+                    <h3 data-i18n="auditSection.steps.3.title">Rapport & Préconisations</h3>
+                    <p data-i18n="auditSection.steps.3.description">Remise d'un rapport détaillé incluant conclusions, recommandations claires et un plan d'action chiffré.</p>
+                </div>
+            </div>
+            <div class="audit-step-arrow"><i class="fas fa-long-arrow-alt-right" aria-hidden="true"></i></div>
+            <div class="audit-step">
+                <div class="audit-step-number"><span>04</span></div>
+                <div class="audit-step-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+                <div class="audit-step-content">
+                    <h3 data-i18n="auditSection.steps.4.title">Accompagnement</h3>
+                    <p data-i18n="auditSection.steps.4.description">Mise en œuvre des recommandations et suivi des améliorations pour garantir l'atteinte de vos objectifs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 40px;">
+            <a href="/questionnaire.html?type=audit" class="btn btn-accent-custom btn-large" data-i18n="auditSection.requestAuditButton">Demander un Audit IT Complet <i class="fas fa-tasks" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="solutions-par-secteur" class="section-padding">
+    <div class="container">
+        <h2 class="section-title-custom" data-i18n="sectorSolutions.title">Des Solutions IT Adaptées à Votre Métier</h2>
+        <p class="section-subtitle-custom" data-i18n="sectorSolutions.subtitle">Nous comprenons les spécificités de chaque secteur et proposons des configurations optimisées.</p>
+        <div class="sector-solutions-grid">
+            <div class="sector-solution-card">
+                <div class="sector-card-image">
+                    <img src="/img/Cabinets-Medicaux.png" alt="Solutions informatiques Atelier Express Pro pour cabinets médicaux et cliniques" loading="lazy" onerror="this.alt='Image placeholder secteur médical'; this.src='https://via.placeholder.com/400x200/F9F8FF/2F1A4B?text=Santé'">
+                </div>
+                <div class="sector-card-content">
+                    <span class="sector-tag" data-i18n="sectorSolutions.medical.tag">Santé & Médical</span>
+                    <h3 data-i18n="sectorSolutions.medical.title">Cabinets Médicaux & Cliniques</h3>
+                    <p data-i18n="sectorSolutions.medical.description">Gestion des dossiers patients (HDS), téléconsultation, conformité RGPD, et infrastructure fiable.</p>
+                    <a href="/solutions/cabinets-medicaux-cliniques.html" class="btn btn-secondary-custom btn-small" data-i18n="sectorSolutions.medical.button">Solutions Santé</a>
+                </div>
+            </div>
+            <div class="sector-solution-card">
+                <div class="sector-card-image">
+                     <img src="/img/Boutiques.png" alt="Solutions informatiques Atelier Express Pro pour commerces, boutiques et points de vente" loading="lazy" onerror="this.alt='Image placeholder secteur commerce'; this.src='https://via.placeholder.com/400x200/F9F8FF/2F1A4B?text=Commerce'">
+                </div>
+                <div class="sector-card-content">
+                    <span class="sector-tag" data-i18n="sectorSolutions.retail.tag">Commerce & Retail</span>
+                    <h3 data-i18n="sectorSolutions.retail.title">Boutiques & Points de Vente</h3>
+                    <p data-i18n="sectorSolutions.retail.description">Systèmes de caisse, gestion des stocks, solutions e-commerce, et Wi-Fi client sécurisé.</p>
+                    <a href="/solutions/commerce-detail-boutiques.html" class="btn btn-secondary-custom btn-small" data-i18n="sectorSolutions.retail.button">Solutions Commerçants</a>
+                </div>
+            </div>
+            <div class="sector-solution-card">
+                <div class="sector-card-image">
+                    <img src="/img/Artisans.png" alt="Solutions informatiques Atelier Express Pro pour artisans et petites entreprises (TPE)" loading="lazy" onerror="this.alt='Image placeholder secteur artisans'; this.src='https://via.placeholder.com/400x200/F9F8FF/2F1A4B?text=Artisans'">
+                </div>
+                <div class="sector-card-content">
+                    <span class="sector-tag" data-i18n="sectorSolutions.craftsmen.tag">Artisanat & TPE</span>
+                    <h3 data-i18n="sectorSolutions.craftsmen.title">Artisans & Petites Entreprises</h3>
+                    <p data-i18n="sectorSolutions.craftsmen.description">Outils de devis/facturation, messagerie pro, sauvegarde, et support IT pour vous concentrer sur votre métier.</p>
+                    <a href="/solutions/artisans-petites-entreprises.html" class="btn btn-secondary-custom btn-small" data-i18n="sectorSolutions.craftsmen.button">Accompagnement TPE</a>
+                </div>
+            </div>
+        </div>
+         <div class="all-services-link-wrapper text-center" style="margin-top: 40px;">
+            <a href="/solutions/solution.html" class="btn btn-outline btn-large">Toutes nos solutions par métier <i class="fas fa-briefcase" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="metiers-cibles" class="section-padding section-bg-light">
+    <div class="container">
+        <h2 class="section-title-custom" data-i18n="targetProfessions.title">Nous Sommes aux Côtés de Nombreux Professionnels</h2>
+        <p class="section-subtitle-custom" data-i18n="targetProfessions.subtitle">Notre expertise s'étend à une variété de métiers, avec une compréhension fine de leurs contraintes et objectifs.</p>
+        <div class="metiers-badges-grid">
+            <div class="metier-badge"><i class="fas fa-hospital" aria-hidden="true"></i> <span data-i18n="professions.health">Professions Libérales Santé</span></div>
+            <div class="metier-badge"><i class="fas fa-balance-scale" aria-hidden="true"></i> <span data-i18n="professions.legalAccounting">Cabinets Juridiques & Comptables</span></div>
+            <div class="metier-badge"><i class="fas fa-store" aria-hidden="true"></i> <span data-i18n="professions.retailEcom">Commerçants & E-commerçants</span></div>
+            <div class="metier-badge"><i class="fas fa-tools" aria-hidden="true"></i> <span data-i18n="professions.craftsmenBuilding">Artisans du Bâtiment</span></div>
+            <div class="metier-badge"><i class="fas fa-lightbulb" aria-hidden="true"></i> <span data-i18n="professions.agenciesConsultants">Agences & Consultants</span></div>
+            <div class="metier-badge"><i class="fas fa-users" aria-hidden="true"></i> <span data-i18n="professions.associationsCommunities">Associations & Collectivités</span></div>
+            <div class="metier-badge"><i class="fas fa-industry" aria-hidden="true"></i> <span data-i18n="professions.smallIndustries">Petites Industries</span></div>
+            <div class="metier-badge"><i class="fas fa-ellipsis-h" aria-hidden="true"></i> <span data-i18n="professions.manyMoreSMEs">Et bien d'autres PME...</span></div>
+        </div>
+    </div>
+</section>
+
+<section id="pourquoi-atelier-express-pro" class="section-padding">
+    <div class="container">
+        <div class="feature-atelier-express-pro-content">
+            <div class="feature-text-content">
+                <span class="eyebrow-text-custom" data-i18n="whyProxatek.eyebrow">Notre Différence</span>
+                <h2 class="section-title-left-custom" data-i18n="whyProxatek.title">Atelier Express Pro : L'Expertise IT au Service de Votre Performance</h2>
+                <p data-i18n="whyProxatek.description">Nous ne sommes pas de simples fournisseurs. Nous sommes vos partenaires stratégiques, dédiés à optimiser votre informatique pour qu'elle devienne un véritable moteur de croissance pour votre PME.</p>
+                <ul class="feature-list-custom">
+                    <li><span class="feature-icon-custom"><i class="fas fa-check" aria-hidden="true"></i></span> <span data-i18n="whyProxatek.features.1">Expertise technique pointue et constamment actualisée.</span></li>
+                    <li><span class="feature-icon-custom"><i class="fas fa-check" aria-hidden="true"></i></span> <span data-i18n="whyProxatek.features.2">Solutions 100% sur-mesure, pensées pour vos besoins réels.</span></li>
+                    <li><span class="feature-icon-custom"><i class="fas fa-check" aria-hidden="true"></i></span> <span data-i18n="whyProxatek.features.3">Support client réactif, humain et basé en France.</span></li>
+                    <li><span class="feature-icon-custom"><i class="fas fa-check" aria-hidden="true"></i></span> <span data-i18n="whyProxatek.features.4">Approche proactive pour prévenir les problèmes avant qu'ils n'arrivent.</span></li>
+                </ul>
+                <a href="/a-propos.html" class="btn btn-primary-custom" data-i18n="whyProxatek.discoverButton">Découvrir notre équipe et nos valeurs</a>
+            </div>
+            <div class="feature-image-content">
+                <img src="/img/atelier-express-pro-valeurs.png" alt="Équipe Atelier Express Pro collaborant sur un projet IT pour PME" onerror="this.alt='Image placeholder valeurs Atelier Express Pro'; this.src='https://via.placeholder.com/500x400/F9F8FF/2F1A4B?text=Nos+Valeurs'" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="focus-section section-padding section-bg-accent-gradient">
+    <div class="container focus-content-wrapper">
+         <div class="focus-image-wrapper">
+            <img src="/img/atelier-express-pro-nouveau-service.png" alt="Solution de supervision proactive Atelier Express Pro affichée sur un ordinateur portable" onerror="this.alt='Image placeholder nouveau service'; this.src='https://via.placeholder.com/450x380/FFFFFF/E535AB?text=Nouveauté'" loading="lazy">
+        </div>
+        <div class="focus-text-wrapper">
+            <span class="eyebrow-text-light" data-i18n="newService.eyebrow">Nouveauté Atelier Express Pro</span>
+            <h2 data-i18n="newService.title">Supervision Proactive de Votre Parc Informatique 24/7</h2>
+            <p data-i18n="newService.description">Anticipez les pannes et optimisez vos performances grâce à notre solution de monitoring intelligent. Détection et résolution des problèmes avant qu'ils n'impactent votre activité.</p>
+            <a href="/services/supervision.html" class="btn btn-white-outline-on-dark large-action-btn" data-i18n="newService.discoverButton">Découvrir la Solution <i class="fas fa-search-plus" aria-hidden="true"></i></a>
+            <p class="focus-note" data-i18n="newService.note">*Compatible avec tous types d'infrastructures et adaptable à vos besoins.</p>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials-atelier-express-pro" class="section-padding">
+    <div class="container">
+        <h2 class="section-title-custom" data-i18n="testimonials.title">Ils nous ont fait confiance, ils témoignent.</h2>
+        <p class="section-subtitle-custom" data-i18n="testimonials.subtitle">La satisfaction de nos clients est notre plus grande réussite. Découvrez leurs expériences.</p>
+        <div class="testimonial-grid-custom">
+            <div class="case-study-card-custom">
+                <div class="case-study-header-custom">
+                            <div class="company-logo-placeholder">
+                    </div>
+                    <div class="case-study-info-custom">
+                        <h3 data-i18n="testimonials.caseAlteora.title">"Une sérénité retrouvée pour Altéora Conseil"</h3>
+                        <span class="industry-tag-custom" data-i18n="testimonials.caseAlteora.tag">Cabinet de Conseil</span>
+                    </div>
+                </div>
+                <p class="testimonial-quote-custom" data-i18n="testimonials.caseAlteora.quote">"Atelier Express Pro a su moderniser notre infrastructure tout en respectant nos contraintes budgétaires. Leur équipe est incroyablement réactive et pédagogue. Nous recommandons sans hésiter !"</p>
+                <div class="results-section-custom">
+                    <h4 data-i18n="testimonials.keyImpacts">Impacts Clés :</h4>
+                    <div class="results-boxes-grid-custom">
+                        <div class="result-box-item-custom">
+                            <span class="result-number-custom">-40%</span>
+                            <span class="result-text-custom" data-i18n="testimonials.caseAlteora.impact1">Temps d'arrêt</span>
+                        </div>
+                        <div class="result-box-item-custom">
+                            <span class="result-number-custom">+25%</span>
+                            <span class="result-text-custom" data-i18n="testimonials.caseAlteora.impact2">Productivité</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-study-card-custom">
+                <div class="case-study-header-custom">
+                    <img src="/img/logo-dynexa.png" alt="Logo Dynexa Industries" class="company-logo-testimonial-custom" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('afterbegin', '<div class=\'company-logo-placeholder\'>D</div>'); this.onerror=null;">
+                    <div class="case-study-info-custom">
+                        <h3 data-i18n="testimonials.caseDynexa.title">"Migration Cloud et Sécurité pour Dynexa Industries"</h3>
+                        <span class="industry-tag-custom" data-i18n="testimonials.caseDynexa.tag">Industrie</span>
+                    </div>
+                </div>
+                <p class="testimonial-quote-custom" data-i18n="testimonials.caseDynexa.quote">"La cybersécurité était notre principale préoccupation. Atelier Express Pro a mis en place une stratégie globale qui nous a permis de dormir sur nos deux oreilles. Un partenaire fiable et expert."</p>
+                <div class="results-section-custom">
+                    <h4 data-i18n="testimonials.keyImpacts">Impacts Clés :</h4>
+                    <div class="results-boxes-grid-custom">
+                        <div class="result-box-item-custom">
+                            <span class="result-number-custom">100%</span>
+                            <span class="result-text-custom" data-i18n="testimonials.caseDynexa.impact1">Données sécurisées</span>
+                        </div>
+                        <div class="result-box-item-custom">
+                            <span class="result-text-label-custom" data-i18n="testimonials.caseDynexa.impact2part1">Réponse</span>
+                            <span class="result-number-custom highlight">Support < 1h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> 
+</section>
+
+<section id="devenir-partenaire" class="section-padding section-partner-cta">
+    <div class="container partner-cta-content">
+        <h2 class="partner-cta-title" data-i18n="partnership.title">Collaborons Ensemble !</h2>
+        <p class="partner-cta-subtitle" data-i18n="partnership.subtitle">Vous souhaitez proposer les solutions Atelier Express Pro à vos clients ? Découvrez notre programme partenaire et développons nos activités conjointement.</p>
+        <a href="/partenariat.html" class="btn btn-white-outline-on-dark large-action-btn large-partner-cta-btn" data-i18n="partnership.button">Devenir Partenaire Atelier Express Pro <i class="fas fa-handshake" aria-hidden="true"></i></a>
+    </div>
+</section>
+
+<section id="contact-atelier-express-pro-cta" class="section-padding section-cta-final-custom">
+    <div class="container text-center">
+        <h2 class="cta-title-custom" data-i18n="finalCta.title">Prêt à donner une nouvelle dimension à votre IT ?</h2>
+        <p class="cta-subtitle-custom" data-i18n="finalCta.subtitle">Que ce soit pour un devis, un conseil ou une urgence, notre équipe est prête à vous accompagner.</p>
+        <div class="cta-buttons-group">
+            <a href="/questionnaire.html" class="btn btn-accent-custom btn-large" data-i18n="finalCta.quoteButton">Simulateur de Devis <i class="fas fa-calculator" aria-hidden="true"></i></a>
+            <a href="/contact.html" class="btn btn-primary-custom btn-large" data-i18n="finalCta.appointmentButton">Prendre Rendez-vous <i class="fas fa-calendar-alt" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const progressBar = document.querySelector('.progress-bar-container');
+    if (progressBar) {
+        const lines = progressBar.querySelectorAll('.progress-line');
+        const stages = progressBar.querySelectorAll('.progress-stage');
+        
+        lines.forEach(line => line.style.backgroundColor = ''); 
+        stages.forEach(stage => stage.classList.remove('active'));
+        if(stages.length > 0) stages[0].classList.add('active'); 
+
+        if (progressBar.classList.contains('step-1')) {
+        } else if (progressBar.classList.contains('step-2')) {
+            if(stages.length > 1) stages[1].classList.add('active');
+            if(lines.length > 0) lines[0].style.backgroundColor = 'var(--custom-accent-magenta)';
+        } else if (progressBar.classList.contains('step-3')) {
+            if(stages.length > 1) stages[1].classList.add('active');
+            if(stages.length > 2) stages[2].classList.add('active');
+            lines.forEach(line => line.style.backgroundColor = 'var(--custom-accent-magenta)');
+        }
+    }
+});
+</script>

@@ -1,0 +1,84 @@
+<!-- Fichier : src/_includes/base.njk -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le titre sera dynamique et viendra du "Front Matter" de chaque page -->
+    <title>{{ title }}</title>
+
+    <!-- La description sera aussi dynamique -->
+    <meta name="description" content="{{ description }}">
+
+    <!-- Liens CSS et autres balises <head> communes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="icon" href="/img/LogoAtelierExpressPro.png" type="image/png">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Tu peux ajouter d'autres balises meta ici si elles sont communes à toutes les pages -->
+</head>
+<body>
+
+    <!-- On inclut le fichier du header. Eleventy va le chercher dans _includes -->
+    {% include "header.njk" %}
+
+    <main>
+        <!-- C'est ici que le contenu unique de chaque page (.njk) sera inséré -->
+        {{ content | safe }}
+    </main>
+
+    <!-- On inclut le fichier du footer -->
+    {% include "footer.njk" %}
+
+    <!-- Bouton d'aide flottant (si commun à toutes les pages) -->
+    <a href="/support-urgent.html" class="floating-help-btn-atelier-express-pro" aria-label="Contacter Atelier Express Pro pour un support urgent">
+        <i class="fas fa-headset" aria-hidden="true"></i>
+    </a>
+
+    <!-- Le script principal qui est sur toutes les pages (menu mobile, année du footer) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Logique pour le menu mobile
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle-custom');
+            const mobileNavMenu = document.getElementById('mobileNavMenuUniversal');
+            const iconOpen = mobileMenuToggle ? mobileMenuToggle.querySelector('.icon-open') : null;
+            const iconClose = mobileMenuToggle ? mobileMenuToggle.querySelector('.icon-close') : null;
+
+            if (mobileMenuToggle && mobileNavMenu && iconOpen && iconClose) {
+                mobileMenuToggle.addEventListener('click', function () {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mobileNavMenu.classList.toggle('active');
+                    
+                    if (mobileNavMenu.classList.contains('active')) {
+                        iconOpen.style.display = 'none';
+                        iconClose.style.display = 'inline';
+                    } else {
+                        iconOpen.style.display = 'inline';
+                        iconClose.style.display = 'none';
+                    }
+                });
+                mobileNavMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mobileNavMenu.classList.contains('active')) {
+                            mobileMenuToggle.click();
+                        }
+                    });
+                });
+            }
+
+            // Logique pour l'année du footer
+            const yearSpan = document.querySelector('.current-year-atelier-express-pro');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Note : les scripts spécifiques à une page (comme questionnaire.js)
+            // ne doivent PAS être ici, mais dans le fichier .njk de la page concernée.
+        });
+    </script>
+</body>
+</html>

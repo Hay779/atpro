@@ -1,0 +1,146 @@
+---
+layout: "base.njk"
+title: "Contactez Atelier Express Pro - Solutions IT pour PME"
+description: "Contactez Atelier Express Pro pour discuter de vos besoins IT, obtenir un devis, planifier un rendez-vous ou pour toute demande d'assistance."
+permalink: "/contact.html"
+---
+
+{# Le contenu unique de la page contact commence ici. Le header et le footer sont gérés par base.njk #}
+
+<section class="hero-section-custom hero-contact">
+    <div class="container">
+        <h1 data-i18n="contactPage.hero.title">Contactez-Nous</h1>
+        <p class="section-subtitle-custom" data-i18n="contactPage.hero.subtitle">Notre équipe est à votre écoute pour répondre à toutes vos questions et vous accompagner dans vos projets informatiques.</p>
+    </div>
+</section>
+
+<section class="contact-content-section section-padding">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Colonne Gauche: Formulaire de Contact -->
+            <div class="contact-form-column">
+                <h2 data-i18n="contactPage.form.title">Envoyez-nous un message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nom" data-i18n="contactPage.form.nameLabel">Nom complet</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="contactPage.form.emailLabel">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone" data-i18n="contactPage.form.phoneLabel">Téléphone (Optionnel)</label>
+                        <input type="tel" id="telephone" name="telephone">
+                    </div>
+                    <div class="form-group">
+                        <label for="sujet" data-i18n="contactPage.form.subjectLabel">Sujet de votre demande</label>
+                        <input type="text" id="sujet" name="sujet" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service" data-i18n="contactPage.form.serviceLabel">Objet de votre demande</label>
+                        <select id="service" name="demande_objet">
+                            <option value="" data-i18n="contactPage.form.reasonOptionDefault">-- Sélectionner un motif --</option>
+                            <option value="info_generale" data-i18n="contactPage.form.reasonInfo">Demande d'information générale</option>
+                            <option value="devis" data-i18n="contactPage.form.reasonQuote">Demande de devis</option>
+                            <option value="rdv_expert" data-i18n="contactPage.form.reasonAppointment">Prise de Rendez-vous Expert</option>
+                            <option value="support_urgent" data-i18n="contactPage.form.reasonSupport">Support Urgent</option>
+                            <option value="partenariat" data-i18n="contactPage.form.reasonPartnership">Demande de partenariat</option>
+                            <option value="autre" data-i18n="contactPage.form.reasonOther">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="contactPage.form.messageLabel">Votre message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="rgpd" required>
+                            <span data-i18n="contactPage.form.rgpdConsent">J'accepte que mes données soient traitées conformément à la <a href="/politique-confidentialite.html" target="_blank">politique de confidentialité</a>.</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary-custom btn-large" data-i18n="contactPage.form.submitButton">Envoyer le message</button>
+                </form>
+            </div>
+
+            <!-- Colonne Droite: Informations de Contact et RDV -->
+            <aside class="contact-info-column">
+                <div class="contact-info-block">
+                    <h3 data-i18n="contactPage.appointment.title">Prenez rendez-vous avec un expert</h3>
+                    <a href="URL_DE_VOTRE_OUTIL_DE_PLANIFICATION_RDV" class="btn btn-accent-custom btn-block" target="_blank" data-i18n="contactPage.appointment.scheduleButton">
+                        <i class="fas fa-calendar-alt"></i> Planifier un RDV
+                    </a>
+                    <p class="availability-note" data-i18n="contactPage.appointment.availabilityNote">Via notre outil de planification en ligne.</p>
+                </div>
+                <div class="contact-info-block">
+                    <h3 data-i18n="contactPage.chat.title">Chattez avec nous</h3>
+                    <button type="button" id="openChatButton" class="btn btn-secondary-custom btn-block">
+                        <i class="fas fa-comments"></i> Depuis notre site
+                    </button>
+                    <p class="availability-note" data-i18n="contactPage.chat.availabilityNote">Du lundi au vendredi de 9h à 17h (icône en bas à droite)</p>
+                </div>
+                <div class="contact-info-block">
+                    <h3 data-i18n="contactPage.callUs.title">Appelez-nous au</h3>
+                    <a href="tel:0800873232" class="phone-number-large">0 800 873 232</a>
+                    <p class="availability-note" data-i18n="contactPage.callUs.availabilityNote">Du lundi au samedi de 8h à 20h</p>
+                </div>
+                <div class="contact-info-block">
+                    <h3 data-i18n="contactPage.coordinates.title">Nos Coordonnées</h3>
+                    <p><i class="fas fa-map-marker-alt icon-left"></i> <strong data-i18n="contactPage.coordinates.addressLabel">Adresse :</strong><br>123 Avenue de la Tech<br>75000 Paris, France</p>
+                    <p><i class="fas fa-envelope icon-left"></i> <strong data-i18n="contactPage.coordinates.emailLabel">E-mail Général :</strong><br><a href="mailto:contact@atelierexpresspro.fr">contact@atelierexpresspro.fr</a></p>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+{# Le script est spécifique à cette page, on le met donc ici #}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Envoi en cours...';
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+            data.rgpd = formData.has('rgpd');
+
+            try {
+                const response = await fetch('https://atpro.onrender.com/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert('Message envoyé avec succès ! Merci, nous vous recontacterons bientôt.');
+                    contactForm.reset();
+                } else {
+                    const errorData = await response.json();
+                    alert('Erreur lors de l\'envoi : ' + (errorData.message || 'Veuillez réessayer.'));
+                }
+            } catch (error) {
+                console.error('Erreur de réseau:', error);
+                alert('Impossible de contacter le serveur. Veuillez vérifier votre connexion et réessayer.');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    }
+
+    const openChatButton = document.getElementById('openChatButton');
+    if (openChatButton) {
+        openChatButton.addEventListener('click', function() {
+            alert("Le widget de chat devrait s'ouvrir ici ! (Intégration à faire)");
+        });
+    }
+});
+</script>
