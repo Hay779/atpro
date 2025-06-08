@@ -2,10 +2,7 @@
 layout: "base.njk"
 title: "Contactez Atelier Express Pro - Solutions IT pour PME"
 description: "Contactez Atelier Express Pro pour discuter de vos besoins IT, obtenir un devis, planifier un rendez-vous ou pour toute demande d'assistance."
-permalink: "/contact.html"
 ---
-
-{# Le contenu unique de la page contact commence ici. Le header et le footer sont gérés par base.njk #}
 
 <section class="hero-section-custom hero-contact">
     <div class="container">
@@ -67,7 +64,7 @@ permalink: "/contact.html"
             <aside class="contact-info-column">
                 <div class="contact-info-block">
                     <h3 data-i18n="contactPage.appointment.title">Prenez rendez-vous avec un expert</h3>
-                    <a href="URL_DE_VOTRE_OUTIL_DE_PLANIFICATION_RDV" class="btn btn-accent-custom btn-block" target="_blank" data-i18n="contactPage.appointment.scheduleButton">
+                    <a href="#" class="btn btn-accent-custom btn-block" target="_blank" data-i18n="contactPage.appointment.scheduleButton">
                         <i class="fas fa-calendar-alt"></i> Planifier un RDV
                     </a>
                     <p class="availability-note" data-i18n="contactPage.appointment.availabilityNote">Via notre outil de planification en ligne.</p>
@@ -94,31 +91,26 @@ permalink: "/contact.html"
     </div>
 </section>
 
-{# Le script est spécifique à cette page, on le met donc ici #}
+{# Le script fetch est spécifique à cette page, on le met donc ici #}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
-
     if (contactForm) {
         contactForm.addEventListener('submit', async function(event) {
             event.preventDefault();
-
             const submitButton = contactForm.querySelector('button[type="submit"]');
             const originalButtonText = submitButton.innerHTML;
             submitButton.disabled = true;
             submitButton.innerHTML = 'Envoi en cours...';
-
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData.entries());
             data.rgpd = formData.has('rgpd');
-
             try {
                 const response = await fetch('/.netlify/functions/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-
                 if (response.ok) {
                     alert('Message envoyé avec succès ! Merci, nous vous recontacterons bientôt.');
                     contactForm.reset();

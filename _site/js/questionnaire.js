@@ -219,7 +219,7 @@ function showStep(stepId) {
 async function sendQuestionnaireData(responses) {
     console.log("Préparation de l'envoi des données du questionnaire :", responses);
     try {
-        const apiUrl = 'https://atpro.onrender.com/api/questionnaire'; 
+        const apiUrl = '/.netlify/functions/questionnaire'; 
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

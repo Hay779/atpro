@@ -1,7 +1,6 @@
 ---
-# On utilise permalink pour s'assurer que le nom du fichier final est correct
-# et qu'il est placé à la racine du site.
 permalink: /questionnaire.html
+eleventyExcludeFromCollections: true
 ---
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,19 +9,15 @@ permalink: /questionnaire.html
   <title>Simulateur de Devis IT Autonome - Atelier Express Pro</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="description" content="Simulateur autonome pour estimation de besoins IT pour Atelier Express Pro.">
-
-  <!-- Chemins corrigés avec un / au début -->
   <link rel="stylesheet" href="/css/style.css"> 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="icon" href="/img/LogoAtelierExpressPro.png" type="image/png">
 </head>
 <body class="questionnaire-page-active">
-
   <header class="header-fullwidth-questionnaire"> 
     <div class="header-questionnaire container"> 
       <div class="logo-questionnaire">
-        <!-- Chemin corrigé avec un / au début -->
         <a href="/" title="Accueil Atelier Express Pro"> 
             <picture>
                 <source media="(max-width:850px)" srcset="/img/LogoP.png">
@@ -39,9 +34,7 @@ permalink: /questionnaire.html
       </div>
     </div>
   </header>
-
   <main class="questionnaire-main-content">
-    <!-- Barre de progression en premier dans le main -->
     <div class="progress-bar-wrapper-atelier-express-pro container"> 
       <div class="steps-atelier-express-pro">
         <span class="step-label current" id="step-1-label">Besoin</span> 
@@ -52,29 +45,20 @@ permalink: /questionnaire.html
         <div id="progressFill" class="progress-fill-atelier-express-pro"></div>
       </div>
     </div>
-
-    <!-- Conteneur pour les questions dynamiques -->
     <div id="question-container" class="container">
         <!-- Le contenu des questions sera injecté ici par JavaScript -->
     </div>
-
-    <!-- NOUVEL EMPLACEMENT POUR LE BOUTON RETOUR -->
     <div class="questionnaire-navigation-wrapper container">
         <button id="backBtn" class="btn btn-outline btn-small" type="button" style="display: none;">
             <i class="fas fa-arrow-left"></i> Retour
         </button>
     </div>
-
   </main>
-
   <footer class="questionnaire-footer"> 
     <p>© <span id="currentYearFooter"></span> Atelier Express Pro. Tous droits réservés.</p>
   </footer>
-
-  <!-- Chemins corrigés avec un / au début -->
   <script src="/js/config.js"></script>
   <script src="/js/questionnaire.js"></script>
-  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
         const currentYearSpan = document.getElementById('currentYearFooter'); 
