@@ -1,4 +1,0 @@
-Logoproxatek.png` -> `LogoAtelierExpressPro.png` * `proxatek-og-accueil.jpg` -> `atelier-express-pro-og-accueil.jpg` * `proxatek-valeurs.png` -> `atelier-express-pro-valeurs.png` * `proxatek-nouveau-service.png` -> `atelier-express-pro-nouveau-service.png` * `proxatek-logo-principal-blanc.png` -> `atelier-express-pro-logo-principal-blanc.png
-
-
-.logo-proxatek-custom` -> `.logo-atelier-express-pro-custom` * `#prestations-proxatek` -> `#prestations-atelier-express-pro`

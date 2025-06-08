@@ -1,0 +1,9 @@
+# Fichier : netlify.toml (à la racine de ton projet)
+
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"
+  publish = "_site"
+
+[functions]
+  node_bundler = "esbuild"

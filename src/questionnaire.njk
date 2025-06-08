@@ -1,159 +1,87 @@
 ---
-# On n'utilise PASAbs de layout pour garder la structure unique de cette page.
-# La présence de 'permalink' est nécessaire pour qu'Eleventyolument. Voici le code "droit au but" pour ton fichier **`src génère le fichier.
+# On utilise permalink pour s'assurer que le nom du fichier final est correct
+# et qu'il est placé à la racine du site.
 permalink: /questionnaire.html
 ---
 <!DOCTYPE html>
-<html lang/questionnaire.njk`**.
-
-Cette page est un peu différente des autres car elle n'a pas le même header ni="fr">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Simulateur de De le même footer. C'est un excellent cas pour montrer la flexibilité d'Eleventy. On va lui créervis IT Autonome - Atelier Express Pro</title>
+  <title>Simulateur de Devis IT Autonome - Atelier Express Pro</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <meta name="description" content="Simulate son propre petit "moule" ou on va simplement ne pas utiliser de layout du tout, ce qui est encore plus simple.
+  <meta name="description" content="Simulateur autonome pour estimation de besoins IT pour Atelier Express Pro.">
 
-ur autonome pour estimation de besoins IT pour Atelier Express Pro.">
-
-  <!-- Chemins corrigés avec un / au début -->Pour garder les choses simples, on va faire en sorte que ce fichier soit autonome mais corrigé pour les chemins d'accès.
-
-
+  <!-- Chemins corrigés avec un / au début -->
   <link rel="stylesheet" href="/css/style.css"> 
-  <link href="https**Action :**
-
-1.  Crée le fichier `questionnaire.njk` dans le dossier `src/://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link`.
-2.  Copie **l'intégralité** du code ci-dessous.
-3.   rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <link rel="icon" href="/img/Colle-le dans le fichier `src/questionnaire.njk`.
-
----
-
-### Code à Coller dans `src/questionnaire.njk`
-
-```html
-<!DOCTYPE html>
-<html lang="fr">
-<LogoAtelierExpressPro.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="icon" href="/img/LogoAtelierExpressPro.png" type="image/png">
 </head>
 <body class="questionnaire-page-active">
 
   <header class="header-fullwidth-questionnaire"> 
-    <head>
-  <meta charset="UTF-8">
-  <title>Simulateur de Devis IT Autonome - Atelier Express Pro</title>
-  <meta name="viewport" content="width=device-width,div class="header-questionnaire container"> 
+    <div class="header-questionnaire container"> 
       <div class="logo-questionnaire">
         <!-- Chemin corrigé avec un / au début -->
         <a href="/" title="Accueil Atelier Express Pro"> 
-            <pictureinitial-scale=1.0">
-  <meta name="description" content="Simulateur autonome pour estimation de besoins IT pour Atelier Express Pro.">
-
-  <!-- Chemins corrigés avec un / au début -->
-  >
+            <picture>
                 <source media="(max-width:850px)" srcset="/img/LogoP.png">
-                <img src="/img/LogoAtelierExpressPro.png" alt="Logo Atelier Express Pro - Simulateur<link rel="stylesheet" href="/style.css"> 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600; de Devis"
+                <img src="/img/LogoAtelierExpressPro.png" alt="Logo Atelier Express Pro - Simulateur de Devis"
                      onerror="this.style.display='none'; this.onerror=null; document.getElementById('logoTextFallbackAtelierExpressProQuestionnaire').style.display='block';"
-                     loading="eager" style="700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/max-height: 45px;">
+                     loading="eager" style="max-height: 45px;">
             </picture>
-            <span id="logoTextFallbackAtelierExpressProQuestionnaire" class="logo-text-fallback-questionnaire" style="display:none;">ATcss/all.min.css">
-  <link rel="icon" href="/img/LogoAtelierExpressPro.png" type="image/png">
-</head>
-<body class="questionnaire-page-ELIER EXPRESS PRO</span>
+            <span id="logoTextFallbackAtelierExpressProQuestionnaire" class="logo-text-fallback-questionnaire" style="display:none;">ATELIER EXPRESS PRO</span>
         </a>
       </div>      
       <div class="promo-questionnaire">
         Bienvenue ! Profitez de <strong>250 € offerts</strong><br>
-        sur votre premieractive">
-
-  <header class="header-fullwidth-questionnaire"> 
-    <div class="header-questionnaire container"> 
-      <div class="logo-questionnaire">
-        <!-- Chemin corrigé avec projet informatique
+        sur votre premier projet informatique
       </div>
     </div>
   </header>
 
   <main class="questionnaire-main-content">
     <!-- Barre de progression en premier dans le main -->
-    <div class="progress-bar-wrapper- un / au début -->
-        <a href="/" title="Accueil Atelier Express Pro"> 
-            <picture>
-                <source media="(max-width:850px)" srcset="/img/LogoP.png">
-                <img srcatelier-express-pro container"> 
+    <div class="progress-bar-wrapper-atelier-express-pro container"> 
       <div class="steps-atelier-express-pro">
         <span class="step-label current" id="step-1-label">Besoin</span> 
-        <="/img/LogoAtelierExpressPro.png" alt="Logo Atelier Express Pro - Simulateur de Devis"
-                     onerror="this.style.display='none'; this.onerror=null; document.getElementById('logoTextspan class="step-label" id="step-2-label">Détails</span>
+        <span class="step-label" id="step-2-label">Détails</span>
         <span class="step-label" id="step-3-label">Devis</span>
       </div>
-      <div classFallbackAtelierExpressProQuestionnaire').style.display='block';"
-                     loading="eager" style="max-height: 45px;">
-            </picture>
-            <span id="logoTextFallbackAtelier="progress-bar-atelier-express-pro">
+      <div class="progress-bar-atelier-express-pro">
         <div id="progressFill" class="progress-fill-atelier-express-pro"></div>
       </div>
     </div>
 
-    <!-- Conteneur pour les questionsExpressProQuestionnaire" class="logo-text-fallback-questionnaire" style="display:none;">ATELIER EXPRESS PRO</span>
-        </a>
-      </div>      
-      <div class="promo-questionnaire">
-         dynamiques -->
+    <!-- Conteneur pour les questions dynamiques -->
     <div id="question-container" class="container">
         <!-- Le contenu des questions sera injecté ici par JavaScript -->
     </div>
 
-    <!-- NOUVEL EMPLACEMENT POUR LE BOUTON RETOURBienvenue ! Profitez de <strong>250 € offerts</strong><br>
-        sur votre premier projet informatique
-      </div>
-    </div>
-  </header>
-
-  <main class="questionnaire-main-content -->
+    <!-- NOUVEL EMPLACEMENT POUR LE BOUTON RETOUR -->
     <div class="questionnaire-navigation-wrapper container">
         <button id="backBtn" class="btn btn-outline btn-small" type="button" style="display: none;">
-            <i">
-    <!-- Barre de progression en premier dans le main -->
-    <div class="progress-bar-wrapper-atelier-express-pro container"> 
-      <div class="steps-atelier-express-pro">
- class="fas fa-arrow-left"></i> Retour
+            <i class="fas fa-arrow-left"></i> Retour
         </button>
     </div>
 
   </main>
 
   <footer class="questionnaire-footer"> 
-    <p>© <span id="currentYearFooter"></span> Atelier        <span class="step-label current" id="step-1-label">Besoin</span> 
-        <span class="step-label" id="step-2-label">Détails</span>
-        <span class=" Express Pro. Tous droits réservés.</p>
+    <p>© <span id="currentYearFooter"></span> Atelier Express Pro. Tous droits réservés.</p>
   </footer>
 
   <!-- Chemins corrigés avec un / au début -->
   <script src="/js/config.js"></script>
-  <script src="/js/questionstep-label" id="step-3-label">Devis</span>
-      </div>
-      <div class="progress-bar-atelier-express-pro">
-        <div id="progressFill" class="progress-fillnaire.js"></script>
+  <script src="/js/questionnaire.js"></script>
   
   <script>
     document.addEventListener('DOMContentLoaded', function() {
         const currentYearSpan = document.getElementById('currentYearFooter'); 
         if (currentYearSpan) {
-            -atelier-express-pro"></div>
-      </div>
-    </div>
-
-    <!-- Conteneur pour les questions dynamiques -->
-    <div id="question-container" class="container">
-        <!-- Le contenu des questions seracurrentYearSpan.textContent = new Date().getFullYear().toString();
+            currentYearSpan.textContent = new Date().getFullYear().toString();
         }
     });
-  </script> injecté ici par JavaScript -->
-    </div>
-
-    <!-- NOUVEL EMPLACEMENT POUR LE BOUTON RET
+  </script>
 </body>
 </html>

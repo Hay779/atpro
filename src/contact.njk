@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
             data.rgpd = formData.has('rgpd');
 
             try {
-                const response = await fetch('https://atpro.onrender.com/api/contact', {
+                const response = await fetch('/.netlify/functions/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
