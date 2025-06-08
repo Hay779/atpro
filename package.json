@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Frontend et Backend pour le site ATPRO",
   "main": "backend/server.js",
-  "scripts": {
-  "build:frontend": "node ./node_modules/@11ty/eleventy/cmd.js",
-  "start:frontend": "node ./node_modules/@11ty/eleventy/cmd.js --serve",
+"scripts": 
+{
+  "start": "npx @11ty/eleventy --serve",
+  "build": "npx @11ty/eleventy",
+  "start:frontend": "npx @11ty/eleventy --serve",
   "start:backend": "node backend/server.js",
   "dev": "npm run start:frontend & npm run start:backend"
 },
